@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sejarah Masjid Raya Baiturrahman | Warisan Peradaban Aceh</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Jelajahi garis waktu sejarah Masjid Raya Baiturrahman Banda Aceh dari abad ke-17 era Kesultanan, agresi kolonial, mukjizat Tsunami 2004, hingga revitalisasi modern." />
+  <meta name="keywords" content="sejarah baiturrahman, masjid raya baiturrahman, sejarah masjid aceh, tsunami baiturrahman, monumen kohler, kubah baiturrahman" />
+  <meta name="author" content="Badan Pengelola Masjid Raya Baiturrahman" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Iconify Icon library -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: {
+              DEFAULT: '#0f5e4a',      /* Tailored Emerald Green */
+              light: '#166534',
+              dark: '#0a3d26',
+            },
+            gold: {
+              DEFAULT: '#d4af37',       /* Gold Accent */
+              light: '#e8c84a',
+              dim: '#c9a227',
+            },
+            ivory: '#f8f5ee',          /* Ivory White Background */
+            charcoal: {
+              DEFAULT: '#1f2937',      /* Dark Charcoal Typography */
+              light: '#374151',
+            },
+            'soft-gray': '#f3f4f6',
+            'soft-gray-2': '#e5e7eb',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          borderRadius: {
+            'sm': '6px',
+            'md': '10px',
+            'lg': '16px',
+            'xl': '24px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Local Custom CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-ivory text-charcoal overflow-x-hidden selection:bg-gold selection:text-emerald-dark">
+
+  <!-- ==========================================
+       SCROLL PROGRESS BAR
+       ========================================== -->
+  <div id="sejarah-scroll-progress"></div>
+
+  <!-- ==========================================
+       1. NAVIGATION BAR (Dynamic Island Enabled)
+       ========================================== -->
+  <header>
+    <nav id="navbar"
+      class="navbar-transition absolute top-0 left-0 w-full h-20 px-6 md:px-20 flex items-center justify-between z-50 bg-emerald-dark/20 border-b border-gold/10">
+  
+      <!-- Brand Logo -->
+      <a href="index.html" id="navbar-logo" class="flex items-center gap-3">
+        <div id="navbar-logo-emblem"
+          class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center text-emerald-dark font-display font-extrabold text-lg md:text-xl shadow-md">
+          🕌
+        </div>
+        <div id="navbar-logo-text" class="flex flex-col">
+          <span id="navbar-logo-title"
+            class="font-display font-bold text-[12px] md:text-[14px] text-white tracking-wide uppercase leading-tight">Baiturrahman</span>
+          <span id="navbar-logo-sub"
+            class="text-[9px] md:text-[11px] text-white/60 font-sans tracking-wider uppercase font-medium">Banda
+            Aceh</span>
+        </div>
+      </a>
+  
+      <!-- Desktop Links -->
+      <ul id="navbar-links" class="hidden lg:flex items-center gap-6 text-white/90 text-[13px] font-semibold">
+        <!-- 1. Beranda -->
+        <li><a href="index.html" class="nav-link-underline transition-colors hover:text-gold">Beranda</a></li>
+  
+        <!-- 2. Profil Masjid (Dropdown) -->
+        <li class="relative group">
+          <button class="flex items-center gap-1 text-gold nav-link-underline transition-colors hover:text-gold-light py-7 font-bold">
+            Profil <iconify-icon icon="ph:caret-down-bold" class="text-[10px]"></iconify-icon>
+          </button>
+          <div
+            class="absolute top-full left-0 w-56 bg-emerald-dark/95 backdrop-blur-xl border border-gold/20 rounded-b-lg py-3 hidden group-hover:block shadow-xl">
+            <a href="sejarah.html" class="block px-5 py-2 text-gold font-bold bg-gold/10 hover:bg-gold/20 transition-all">Sejarah Masjid</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Visi & Misi</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Struktur Kepengurusan</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Imam & Muadzin</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Arsitektur & Fasilitas</a>
+          </div>
+        </li>
+  
+        <!-- 3. Layanan & Wisata (Dropdown) -->
+        <li class="relative group">
+          <button class="flex items-center gap-1 nav-link-underline transition-colors hover:text-gold py-7">
+            Layanan & Wisata <iconify-icon icon="ph:caret-down-bold" class="text-[10px]"></iconify-icon>
+          </button>
+          <div
+            class="absolute top-full left-0 w-64 bg-emerald-dark/95 backdrop-blur-xl border border-gold/20 rounded-b-lg py-3 hidden group-hover:block shadow-xl">
+            <a href="index.html#row-subuh" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Jadwal Shalat & Petugas</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Layanan Akad Nikah</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Layanan Mualaf</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Konsultasi Agama</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all font-bold text-gold">Visit Baiturrahman (Wisata)</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Perpustakaan</a>
+          </div>
+        </li>
+  
+        <!-- 4. Kegiatan & Syiar (Dropdown) -->
+        <li class="relative group">
+          <button class="flex items-center gap-1 nav-link-underline transition-colors hover:text-gold py-7">
+            Kegiatan <iconify-icon icon="ph:caret-down-bold" class="text-[10px]"></iconify-icon>
+          </button>
+          <div
+            class="absolute top-full left-0 w-56 bg-emerald-dark/95 backdrop-blur-xl border border-gold/20 rounded-b-lg py-3 hidden group-hover:block shadow-xl">
+            <a href="index.html#events" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Agenda Kegiatan</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Kajian Rutin</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Pendidikan & Remaja</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Ramadhan di Baiturrahman</a>
+          </div>
+        </li>
+  
+        <!-- 5. Media & Publikasi (Dropdown) -->
+        <li class="relative group">
+          <button class="flex items-center gap-1 nav-link-underline transition-colors hover:text-gold py-7">
+            Media <iconify-icon icon="ph:caret-down-bold" class="text-[10px]"></iconify-icon>
+          </button>
+          <div
+            class="absolute top-full right-0 lg:left-0 w-60 bg-emerald-dark/95 backdrop-blur-xl border border-gold/20 rounded-b-lg py-3 hidden group-hover:block shadow-xl">
+            <a href="index.html#news" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Berita Terkini</a>
+            <a href="index.html#khutbah-archive-anchor" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Arsip Khutbah Jumat</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Artikel Keislaman</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">MRB TV (Video)</a>
+            <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Radio Baiturrahman</a>
+            <a href="index.html#gallery" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Galeri Foto</a>
+          </div>
+        </li>
+  
+        <!-- 7. Kontak Kami -->
+        <li><a href="#footer" class="nav-link-underline transition-colors hover:text-gold">Kontak</a></li>
+      </ul>
+  
+      <!-- Right Actions -->
+      <div id="navbar-right" class="flex items-center gap-3 md:gap-4">
+        <!-- Search Button -->
+        <button id="navbar-search"
+          class="w-9 h-9 rounded-md bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-white cursor-pointer transition-all duration-300"
+          aria-label="Cari di website">
+          <iconify-icon icon="ph:magnifying-glass" width="18"></iconify-icon>
+        </button>
+  
+        <!-- 6. Zakat & Donasi (CTA Button) -->
+        <a href="index.html#donation" id="navbar-cta"
+          class="bg-gradient-to-r from-gold to-gold-dim hover:from-gold-light hover:to-gold font-sans font-bold text-[11px] md:text-[12px] text-emerald-dark px-4 md:px-5 py-2 md:py-2.5 rounded-md transition-all duration-300 shadow-md cursor-pointer hover:scale-105 whitespace-nowrap uppercase tracking-tighter">
+          Infaq & Zakat
+        </a>
+  
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn"
+          class="lg:hidden w-9 h-9 rounded-md bg-white/10 border border-white/15 flex items-center justify-center text-white cursor-pointer"
+          aria-label="Toggle menu">
+          <iconify-icon icon="ph:list" width="20"></iconify-icon>
+        </button>
+      </div>
+    </nav>
+  
+    <!-- Mobile Nav Dropdown Menu (Simplified for Mobile) -->
+    <div id="mobile-menu"
+      class="hidden fixed top-24 left-4 right-4 bg-emerald-dark/98 backdrop-blur-xl border border-gold/30 rounded-2xl p-6 z-40 shadow-2xl flex flex-col gap-2 max-h-[80vh] overflow-y-auto lg:hidden text-left">
+      <a href="index.html" class="text-white/80 font-medium text-base py-3 border-b border-white/5">Beranda</a>
+      <a href="sejarah.html" class="text-gold font-bold text-base py-3 border-b border-white/5">Profil Masjid (Sejarah)</a>
+      <a href="index.html#services" class="text-white/80 font-medium text-base py-3 border-b border-white/5">Layanan & Wisata</a>
+      <a href="index.html#events" class="text-white/80 font-medium text-base py-3 border-b border-white/5">Kegiatan & Syiar</a>
+      <a href="index.html#news" class="text-white/80 font-medium text-base py-3 border-b border-white/5">Media & Publikasi</a>
+      <a href="#footer" class="text-white/80 font-medium text-base py-3 border-b border-white/5">Kontak Kami</a>
+      <a href="index.html#donation" class="mt-4 bg-gold text-emerald-dark font-bold text-center py-3 rounded-xl">Zakat & Donasi</a>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       SECTION 1 — HERO STORYTELLING BANNER
+       ========================================== -->
+  <section id="sejarah-hero" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <!-- Split Screen Background -->
+    <div class="absolute inset-0 z-0 flex">
+      <div class="w-full h-full bg-cover bg-center brightness-90" 
+           style="background-image: url('assets/img/sejarah-hero-split.png');"></div>
+    </div>
+
+    <!-- Dark Cinematic Overlay -->
+    <div class="absolute inset-0 z-10 bg-gradient-to-t from-charcoal via-charcoal/85 to-emerald-dark/40"></div>
+
+    <!-- Islamic Geometric Watermark Overlay -->
+    <div class="bg-geo-pattern absolute inset-0 z-20 opacity-5 pointer-events-none"></div>
+
+    <!-- Center Content -->
+    <div class="relative z-30 text-center max-w-4xl px-6 md:px-12 flex flex-col items-center">
+      <span class="inline-flex items-center gap-2 bg-gold/15 border border-gold/45 text-gold font-sans font-bold text-[11px] px-5 py-2 rounded-full mb-8 tracking-[3px] uppercase">
+        <iconify-icon icon="ph:star-four" class="animate-spin-slow text-gold"></iconify-icon>
+        Warisan Islam Aceh
+      </span>
+      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight tracking-tight mb-6 max-w-3xl">
+        Sebuah Monumen Iman, Perjuangan, dan Keajaiban di Serambi Mekkah
+      </h1>
+      <p class="font-sans text-sm sm:text-base md:text-lg text-white/80 max-w-2xl leading-relaxed mb-10">
+        Lebih dari empat abad perjalanan sejarah yang menghubungkan kejayaan Kesultanan Aceh, perjuangan rakyat melawan kolonialisme, hingga kebangkitan ajaib pasca tsunami dahsyat.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
+        <a href="#pengantar" class="w-full sm:w-auto bg-gold hover:bg-gold-light text-emerald-dark font-sans font-bold text-xs px-8 py-4 rounded-md shadow-lg shadow-gold/15 transition-all duration-300 uppercase tracking-wider flex items-center justify-center gap-2">
+          Jelajahi Sejarah
+          <iconify-icon icon="ph:caret-double-down" width="14"></iconify-icon>
+        </a>
+        <a href="#historical-gallery" class="w-full sm:w-auto bg-white/10 hover:bg-white/15 border border-white/20 text-white font-sans font-semibold text-xs px-8 py-4 rounded-md transition-all duration-300 uppercase tracking-wider flex items-center justify-center">
+          Lihat Galeri Tempo Dulu
+        </a>
+      </div>
+    </div>
+
+    <!-- Animated Scroll Down Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-1.5 text-white/50 text-[10px] tracking-widest uppercase animate-bounce cursor-pointer">
+      <span>Gulir</span>
+      <iconify-icon icon="ph:arrow-down" class="text-gold" width="14"></iconify-icon>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STICKY BREADCRUMB NAVIGATION
+       ========================================== -->
+  <div class="sticky-breadcrumbs bg-emerald-dark/95 border-b border-gold/15 py-3.5 px-6 md:px-20 text-white/70 text-[11px] font-sans flex items-center gap-2">
+    <a href="index.html" class="hover:text-gold transition-colors flex items-center gap-1">
+      <iconify-icon icon="ph:house" width="12"></iconify-icon>
+      Beranda
+    </a>
+    <iconify-icon icon="ph:caret-right-bold" class="text-[8px] text-white/30"></iconify-icon>
+    <span>Profil</span>
+    <iconify-icon icon="ph:caret-right-bold" class="text-[8px] text-white/30"></iconify-icon>
+    <span class="text-gold font-semibold">Sejarah Masjid</span>
+  </div>
+
+  <!-- ==========================================
+       SECTION 2 — PENGANTAR (INTRODUCTION)
+       ========================================== -->
+  <section id="pengantar" class="py-24 relative overflow-hidden bg-ivory">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Left Quote Block -->
+        <div class="lg:col-span-7 flex flex-col reveal-on-scroll">
+          <div class="w-16 h-1 bg-gold mb-8"></div>
+          <div class="relative">
+            <span class="text-gold/25 font-serif text-[180px] leading-none absolute -left-6 -top-20 select-none">“</span>
+            <blockquote class="font-serif italic text-2xl md:text-3xl text-emerald-dark leading-relaxed relative z-10 pt-4">
+              Masjid Raya Baiturrahman bukan sekadar bangunan batu dan kubah. Ia adalah detak jantung spiritual, benteng pertahanan para syuhada, dan saksi bisu air mata serta kejayaan peradaban Islam di Aceh.
+            </blockquote>
+          </div>
+          <p class="font-sans font-bold text-xs uppercase tracking-widest text-gold mt-6 flex items-center gap-2">
+            <span class="w-4 h-[1px] bg-gold"></span>
+            Simbol Kekuatan Rakyat Aceh
+          </p>
+        </div>
+
+        <!-- Right Editorial Content Column -->
+        <div class="lg:col-span-5 flex flex-col reveal-on-scroll delay-200">
+          <h3 class="font-serif text-3xl font-bold text-charcoal mb-6 leading-tight">
+            Pusat Kejayaan Spiritual di Ujung Sumatera
+          </h3>
+          <p class="font-sans text-sm text-charcoal-light leading-relaxed mb-8">
+            Berdiri megah di jantung daerah berjuluk Serambi Mekkah, kompleks megah ini merangkum narasi panjang perlawanan terhadap kolonialisme Belanda, keajaiban spiritual yang memperkokoh iman saat bencana gempa dan tsunami 2004 melanda, hingga kemajuan zaman di era global saat ini.
+          </p>
+          
+          <!-- Key facts list -->
+          <ul class="flex flex-col gap-4 font-sans text-sm text-charcoal">
+            <li class="flex items-center gap-3.5 pb-3 border-b border-gold/10">
+              <span class="w-7 h-7 rounded-full bg-emerald/10 border border-gold/30 flex items-center justify-center text-gold"><iconify-icon icon="ph:map-pin"></iconify-icon></span>
+              <span class="font-semibold text-emerald-dark">Berdiri di pusat Kota Banda Aceh</span>
+            </li>
+            <li class="flex items-center gap-3.5 pb-3 border-b border-gold/10">
+              <span class="w-7 h-7 rounded-full bg-emerald/10 border border-gold/30 flex items-center justify-center text-gold"><iconify-icon icon="ph:sword"></iconify-icon></span>
+              <span class="font-semibold text-emerald-dark">Bertahan dari gempuran perang kolonial</span>
+            </li>
+            <li class="flex items-center gap-3.5 pb-3 border-b border-gold/10">
+              <span class="w-7 h-7 rounded-full bg-emerald/10 border border-gold/30 flex items-center justify-center text-gold"><iconify-icon icon="ph:shield-check"></iconify-icon></span>
+              <span class="font-semibold text-emerald-dark">Selamat dari Tsunami dahsyat 2004</span>
+            </li>
+            <li class="flex items-center gap-3.5">
+              <span class="w-7 h-7 rounded-full bg-emerald/10 border border-gold/30 flex items-center justify-center text-gold"><iconify-icon icon="ph:crown"></iconify-icon></span>
+              <span class="font-semibold text-emerald-dark">Ikon peradaban dan kebanggaan rakyat Aceh</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Parallax background/watermark decoration -->
+    <div class="absolute right-0 bottom-0 w-full h-full opacity-10 bg-no-repeat bg-cover pointer-events-none" 
+         style="background-image: url('assets/img/koridor-bg.jpg'); mix-blend-mode: multiply;"></div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 3 — INTERACTIVE TIMELINE HISTORY
+       ========================================== -->
+  <section id="timeline" class="pt-24 bg-white relative">
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center mb-20 reveal-on-scroll">
+      <span class="text-gold font-sans font-bold text-xs uppercase tracking-widest block mb-3">Garis Waktu Sejarah</span>
+      <h2 class="font-serif text-3xl md:text-4xl text-emerald-dark font-bold">Menelusuri Perjalanan Abadi Baiturrahman</h2>
+      <div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
+    </div>
+
+    <!-- Timeline Wrapper -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative">
+      <!-- Glow Timeline Axis -->
+      <div class="timeline-axis relative">
+        <div class="flex flex-col gap-16 md:gap-24">
+          
+          <!-- Event 1: Era Kesultanan Aceh -->
+          <div class="relative flex flex-col md:flex-row items-center md:justify-between reveal-on-scroll">
+            <div class="md:w-[45%] md:text-right flex flex-col md:items-end">
+              <span class="inline-block bg-gold text-emerald-dark px-4 py-1.5 rounded-full font-sans font-extrabold text-sm tracking-wider shadow-sm mb-3">
+                1612 M
+              </span>
+              
+            </div>
+            
+            <!-- Timeline Center Node -->
+            <div class="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-1 w-5 h-5 rounded-full bg-emerald border-4 border-gold shadow-[0_0_12px_rgba(212,175,55,0.7)] z-10"></div>
+            
+            <div class="md:w-[45%] mt-6 md:mt-0 rounded-lg overflow-hidden">
+              <h3 class="font-serif text-xl md:text-2xl text-emerald-dark font-semibold mb-2">Era Kesultanan Aceh</h3>
+              <p class="font-sans text-xs md:text-sm text-charcoal-light leading-relaxed">
+                Dibuat pertama kali oleh Sultan Iskandar Muda dari Kerajaan Aceh Darussalam. Masjid ini segera berkembang menjadi
+                pusat administrasi kerajaan, benteng pertahanan spiritual, serta universitas pendidikan Islam internasional yang
+                dikunjungi ulama dari Arab, Persia, India, dan Nusantara.
+              </p>
+            </div>
+          </div>
+
+          <!-- Event 2: Era Kolonial Belanda -->
+          <div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between reveal-on-scroll">
+            <div class="md:w-[45%] flex flex-col items-start">
+              <span class="inline-block bg-emerald text-white px-4 py-1.5 rounded-full font-sans font-extrabold text-sm tracking-wider shadow-sm mb-3">
+                1873 M
+              </span>
+              
+            </div>
+            
+            <!-- Timeline Center Node -->
+            <div class="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-1 w-5 h-5 rounded-full bg-emerald border-4 border-gold shadow-[0_0_12px_rgba(212,175,55,0.7)] z-10"></div>
+            
+            <div class="md:w-[45%] mt-6 md:mt-0 rounded-lg overflow-hidden">
+              <h3 class="font-serif text-xl md:text-2xl text-emerald-dark font-semibold mb-2">Era Kolonial Belanda</h3>
+              <p class="font-sans text-xs md:text-sm text-charcoal-light leading-relaxed">
+                Di tengah agresi militer Belanda pertama di Aceh, bangunan kayu utama masjid dibakar habis untuk meredam moral
+                pejuang. Peristiwa ini memicu kemarahan dahsyat dan perlawanan gerilya rakyat Aceh. Di pekarangan inilah Jenderal
+                Belanda J.H.R. Kohler tewas tertembak oleh penembak jitu Aceh.
+              </p>
+            </div>
+          </div>
+
+          <!-- Event 3: Pembangunan Kembali -->
+          <div class="relative flex flex-col md:flex-row items-center md:justify-between reveal-on-scroll">
+            <div class="md:w-[45%] md:text-right flex flex-col md:items-end">
+              <span class="inline-block bg-gold text-emerald-dark px-4 py-1.5 rounded-full font-sans font-extrabold text-sm tracking-wider shadow-sm mb-3">
+                1879 M
+              </span>
+              
+            </div>
+            
+            <!-- Timeline Center Node -->
+            <div class="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-1 w-5 h-5 rounded-full bg-emerald border-4 border-gold shadow-[0_0_12px_rgba(212,175,55,0.7)] z-10"></div>
+            
+            <div class="md:w-[45%] mt-6 md:mt-0 rounded-lg overflow-hidden">
+              <h3 class="font-serif text-xl md:text-2xl text-emerald-dark font-semibold mb-2">Pembangunan Kembali</h3>
+              <p class="font-sans text-xs md:text-sm text-charcoal-light leading-relaxed">
+                Sebagai upaya rekonsiliasi dan meredakan ketegangan rakyat Aceh, Gubernur Jenderal Van Lansberge mendirikan kembali
+                masjid baru dengan meletakkan batu pertama. Dirancang oleh arsitek Belanda Gerrit Bruins dengan mengadopsi gaya
+                arsitektur Indo-Saracenic (Mughal-Moors).
+              </p>
+            </div>
+          </div>
+
+          <!-- Event 4: Era Perluasan -->
+          <div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between reveal-on-scroll">
+            <div class="md:w-[45%] flex flex-col items-start">
+              <span class="inline-block bg-emerald text-white px-4 py-1.5 rounded-full font-sans font-extrabold text-sm tracking-wider shadow-sm mb-3">
+                1935 - 1991 M
+              </span>
+              
+            </div>
+            
+            <!-- Timeline Center Node -->
+            <div class="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-1 w-5 h-5 rounded-full bg-emerald border-4 border-gold shadow-[0_0_12px_rgba(212,175,55,0.7)] z-10"></div>
+            
+            <div class="md:w-[45%] mt-6 md:mt-0 rounded-lg overflow-hidden">
+              <h3 class="font-serif text-xl md:text-2xl text-emerald-dark font-semibold mb-2">Era Perluasan Kubah</h3>
+              <p class="font-sans text-xs md:text-sm text-charcoal-light leading-relaxed">
+                Seiring pertambahan jamaah, perluasan berkala dilakukan. Kubah masjid bertambah dari 1 kubah menjadi 3 kubah pada
+                tahun 1935, kemudian berkembang menjadi 5 kubah pada 1957. Akhirnya diperluas secara besar-besaran pada 1991 menjadi 7
+                kubah dengan tambahan 5 menara utama yang megah.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Special Block: Tsunami 2004 (Full Bleed Content Box) -->
+    
+    <div class="w-full mt-24 relative overflow-hidden bg-cover bg-center py-28 px-6 md:px-20 parallax-bg-effect"
+         style="background-image: url('assets/img/sejarah-tsunami-miracle.png');">
+      <!-- Deep Blue-Green Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-emerald-dark/95 via-emerald-dark/85 to-transparent z-0"></div>
+      
+      <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-white">
+        <div class="lg:col-span-7 flex flex-col reveal-on-scroll">
+          <span class="text-gold font-sans font-bold text-xs uppercase tracking-[3px] mb-3 block">MUKJIZAT 26 DESEMBER 2004</span>
+          <h2 class="font-serif text-3xl md:text-5xl font-bold leading-tight mb-6 max-w-xl">
+            Ketika Kota Hancur, Baiturrahman Tetap Berdiri
+          </h2>
+          <p class="font-sans text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl mb-8">
+            Gempa bumi berkekuatan 9,1 SR memicu gelombang tsunami raksasa yang menyapu pesisir Aceh. Di kala seisi kota Banda Aceh luluh lantak dilanda amukan air bah, Masjid Raya Baiturrahman kokoh berdiri sebagai perlindungan fisik dan rohani bagi ribuan nyawa warga yang berlindung di dalamnya.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-on-scroll delay-200">
+          <div class="p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/15">
+            <span class="block font-display text-4xl md:text-5xl text-gold font-extrabold mb-1">9,1</span>
+            <span class="font-sans text-[10px] text-white/60 tracking-wider uppercase font-semibold">SKALA RICHTER</span>
+            <p class="font-sans text-xs text-white/70 mt-2">Daya guncang gempa terdahsyat abad ke-21.</p>
+          </div>
+          <div class="p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/15">
+            <span class="block font-display text-4xl md:text-5xl text-gold font-extrabold mb-1">200k+</span>
+            <span class="font-sans text-[10px] text-white/60 tracking-wider uppercase font-semibold">PENYINTAS</span>
+            <p class="font-sans text-xs text-white/70 mt-2">Ribuan jiwa berlindung dengan selamat di dalam masjid.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 4 — ARSITEKTUR BERSEJARAH
+       ========================================== -->
+  <section id="arsitektur" class="py-24 bg-soft-gray border-b border-soft-gray-2">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+      
+      <!-- Section Headers -->
+      <div class="text-center mb-16 reveal-on-scroll">
+        <span class="text-gold font-sans font-bold text-xs uppercase tracking-widest block mb-3">Detail Estetika</span>
+        <h2 class="font-serif text-3xl md:text-4xl text-emerald-dark font-bold">Jejak Sejarah dalam Setiap Detail</h2>
+        <div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
+      </div>
+
+      <!-- Feature Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Monumen Kohler -->
+        <div class="reveal-on-scroll bg-white p-4 rounded-xl border border-gold/15 flex flex-col shadow-md card-hover-lift group">
+          <div class="overflow-hidden rounded-lg mb-6 h-64 img-zoom-hover">
+            <img src="assets/img/sejarah-kohler.png" alt="Monumen Kohler" class="w-full h-full object-cover">
+          </div>
+          <div class="px-2 pb-2">
+            <span class="text-gold font-sans font-bold text-[10px] tracking-wider uppercase block mb-1">Monumen Perjuangan</span>
+            <h3 class="font-serif text-xl text-emerald-dark font-bold mb-3 group-hover:text-gold transition-colors">Monumen Kohler</h3>
+            <p class="font-sans text-xs text-charcoal-light leading-relaxed">
+              Sebuah tugu penanda di halaman masjid yang menjadi saksi bisu tempat robohnya Mayor Jenderal J.H.R. Kohler pada ekspedisi militer Belanda pertama di Aceh tahun 1873.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Kubah Hitam Gula Batu -->
+        <div class="reveal-on-scroll delay-100 bg-white p-4 rounded-xl border border-gold/15 flex flex-col shadow-md card-hover-lift group">
+          <div class="overflow-hidden rounded-lg mb-6 h-64 img-zoom-hover">
+            <img src="assets/img/sejarah-black-dome.png" alt="Kubah Hitam Gula Batu" class="w-full h-full object-cover">
+          </div>
+          <div class="px-2 pb-2">
+            <span class="text-gold font-sans font-bold text-[10px] tracking-wider uppercase block mb-1">Ikonik</span>
+            <h3 class="font-serif text-xl text-emerald-dark font-bold mb-3 group-hover:text-gold transition-colors">Kubah Hitam Gula Batu</h3>
+            <p class="font-sans text-xs text-charcoal-light leading-relaxed">
+              Kubah kayu sirap berwarna hitam pekat dilapisi aspal yang khas, memberikan kontras luar biasa dengan dinding pualam putih bersih dari masjid ini.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Menara Utama -->
+        <div class="reveal-on-scroll delay-200 bg-white p-4 rounded-xl border border-gold/15 flex flex-col shadow-md card-hover-lift group">
+          <div class="overflow-hidden rounded-lg mb-6 h-64 img-zoom-hover">
+            <img src="assets/img/suasana-ibadah-bg.jpg" alt="Menara Utama" class="w-full h-full object-cover">
+          </div>
+          <div class="px-2 pb-2">
+            <span class="text-gold font-sans font-bold text-[10px] tracking-wider uppercase block mb-1">Lansekap Menjulang</span>
+            <h3 class="font-serif text-xl text-emerald-dark font-bold mb-3 group-hover:text-gold transition-colors">Menara Utama</h3>
+            <p class="font-sans text-xs text-charcoal-light leading-relaxed">
+              Menara setinggi 85 meter di pekarangan utama, melambangkan kumandang gema tauhid, sekaligus menjadi titik pemandangan kota Banda Aceh yang ikonik.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 5 — BAITURRAHMAN MASA KINI
+       ========================================== -->
+  <section id="baiturrahman-masa-kini" class="py-24 bg-emerald text-white relative overflow-hidden">
+    <!-- Geometric Watermark -->
+    <div class="bg-geo-pattern absolute inset-0 z-0 opacity-5 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+      
+      <!-- Section Layout Split -->
+      <div class="flex flex-col lg:flex-row justify-between items-end mb-16 gap-6">
+        <div class="reveal-on-scroll">
+          <span class="text-gold font-sans font-bold text-xs uppercase tracking-widest block mb-2">Keagungan Modern</span>
+          <h2 class="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">Wajah Baru, Ruh yang Tetap Sama</h2>
+          <p class="font-sans text-sm text-white/70 max-w-xl mt-4 leading-relaxed">
+            Transformasi pekarangan dengan memasang 12 payung elektrik raksasa menyulap suasana masjid menyerupai kompleks Masjid Nabawi di Madinah, menyejukkan jamaah dan mengundang jutaan wisatawan religi.
+          </p>
+        </div>
+      </div>
+
+      <!-- Grid Cards with glassmorphism -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/10 shadow-lg reveal-on-scroll">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/30 rounded-md flex items-center justify-center text-gold mb-6">
+            <iconify-icon icon="ph:umbrella-bold" width="24"></iconify-icon>
+          </div>
+          <h4 class="font-serif text-lg font-bold mb-3 text-white">12 Payung Elektrik Raksasa</h4>
+          <p class="font-sans text-xs text-white/70 leading-relaxed">
+            Menyediakan keteduhan bagi ribuan jamaah pelataran di kala terik matahari, menutup otomatis kala senja dan hujan turun.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/10 shadow-lg reveal-on-scroll delay-100">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/30 rounded-md flex items-center justify-center text-gold mb-6">
+            <iconify-icon icon="ph:squares-four-bold" width="24"></iconify-icon>
+          </div>
+          <h4 class="font-serif text-lg font-bold mb-3 text-white">Pelataran Marmer Premium</h4>
+          <p class="font-sans text-xs text-white/70 leading-relaxed">
+            Lantai luar dilapisi marmer pilihan kualitas tinggi, memberikan permukaan sejuk berkilau yang nyaman dipijak untuk shalat pelataran.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/10 shadow-lg reveal-on-scroll delay-200">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/30 rounded-md flex items-center justify-center text-gold mb-6">
+            <iconify-icon icon="ph:car-profile-bold" width="24"></iconify-icon>
+          </div>
+          <h4 class="font-serif text-lg font-bold mb-3 text-white">Basement Parkir Modern</h4>
+          <p class="font-sans text-xs text-white/70 leading-relaxed">
+            Fasilitas ruang parkir bawah tanah berkapasitas ratusan mobil dan sepeda motor demi menjaga estetika dan kenyamanan pekarangan atas.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/10 shadow-lg reveal-on-scroll">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/30 rounded-md flex items-center justify-center text-gold mb-6">
+            <iconify-icon icon="ph:drop-bold" width="24"></iconify-icon>
+          </div>
+          <h4 class="font-serif text-lg font-bold mb-3 text-white">Area Wudhu Bawah Tanah</h4>
+          <p class="font-sans text-xs text-white/70 leading-relaxed">
+            Tempat berwudhu pria dan wanita berkelas internasional di basement bawah tanah yang bersih, sejuk, dan teratur.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/10 shadow-lg reveal-on-scroll delay-100">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/30 rounded-md flex items-center justify-center text-gold mb-6">
+            <iconify-icon icon="ph:lightbulb-bold" width="24"></iconify-icon>
+          </div>
+          <h4 class="font-serif text-lg font-bold mb-3 text-white">Sistem Pencahayaan Modern</h4>
+          <p class="font-sans text-xs text-white/70 leading-relaxed">
+            Pencahayaan LED tematis canggih yang menerangi kubah-kubah dan menara kala malam, memberikan pemandangan dramatis berwibawa.
+          </p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-xl border border-white/10 shadow-lg reveal-on-scroll delay-200">
+          <div class="w-12 h-12 bg-gold/10 border border-gold/30 rounded-md flex items-center justify-center text-gold mb-6">
+            <iconify-icon icon="ph:compass-bold" width="24"></iconify-icon>
+          </div>
+          <h4 class="font-serif text-lg font-bold mb-3 text-white">Area Wisata Religi</h4>
+          <p class="font-sans text-xs text-white/70 leading-relaxed">
+            Kawasan terpadu ramah lingkungan yang ramah bagi wisatawan nusantara maupun mancanegara untuk menikmati peradaban Islam.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 6 — BEFORE & AFTER COMPARISON
+       ========================================== -->
+  <section id="comparison" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center mb-16 reveal-on-scroll">
+      <span class="text-gold font-sans font-bold text-xs uppercase tracking-widest block mb-3">Dulu & Sekarang</span>
+      <h2 class="font-serif text-3xl md:text-4xl text-emerald-dark font-bold">Interaktif: Sebelum & Sesudah Revitalisasi</h2>
+      <p class="font-sans text-sm text-charcoal-light mt-3 max-w-xl mx-auto">
+        Geser garis kuning pada gambar di bawah untuk melihat transformasi menakjubkan wajah Baiturrahman dari era vintage abad ke-19 hingga era modern digital.
+      </p>
+      <div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
+    </div>
+
+    <!-- Drag Slider Container -->
+    <div class="max-w-4xl mx-auto px-6 reveal-on-scroll">
+      <div id="before-after-slider" class="before-after-container aspect-[16/10] md:aspect-[16/9]">
+        <!-- Base Background Image (Vintage / Before) -->
+        <img src="assets/img/sejarah-vintage-comparison.png" alt="Baiturrahman Vintage Era" class="w-full h-full object-cover">
+        
+        <!-- Absolute Image (Modern / After) -->
+        <div class="after-image overflow-hidden">
+          <img src="assets/img/sejarah-modern-comparison.png" alt="Baiturrahman Modern Era" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Slider Handle Bar -->
+        <div class="slider-handle">
+          <div class="slider-handle-circle">
+            <iconify-icon icon="ph:arrows-left-right" class="text-gold"></iconify-icon>
+          </div>
+        </div>
+
+        <!-- Labels -->
+        <span class="absolute bottom-4 left-4 bg-charcoal/80 text-white text-[10px] tracking-widest font-sans font-bold px-3.5 py-1.5 rounded uppercase z-20">Abad ke-19</span>
+        <span class="absolute bottom-4 right-4 bg-emerald-dark/80 text-gold text-[10px] tracking-widest font-sans font-bold px-3.5 py-1.5 rounded uppercase z-20 font-bold">Era Digital</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 7 — HISTORICAL PHOTO GALLERY
+       ========================================== -->
+  <section id="historical-gallery" class="py-24 bg-charcoal text-white relative">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+      
+      <!-- Section Headers -->
+      <div class="text-center mb-16 reveal-on-scroll">
+        <span class="text-gold font-sans font-bold text-xs uppercase tracking-widest block mb-3">Arsip Visual</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold">Galeri Foto Tempo Dulu</h2>
+        <div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
+      </div>
+
+      <!-- Categories Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12 reveal-on-scroll">
+        <button class="hist-tab px-6 py-2.5 rounded-full font-sans text-xs uppercase tracking-wider transition-all bg-gold text-emerald-dark font-bold" data-filter="all">Semua Era</button>
+        <button class="hist-tab px-6 py-2.5 rounded-full font-sans text-xs uppercase tracking-wider transition-all bg-white/5 text-white/70 border border-white/10 hover:border-gold/30 hover:text-gold" data-filter="kesultanan">Era Kesultanan</button>
+        <button class="hist-tab px-6 py-2.5 rounded-full font-sans text-xs uppercase tracking-wider transition-all bg-white/5 text-white/70 border border-white/10 hover:border-gold/30 hover:text-gold" data-filter="kolonial">Era Kolonial</button>
+        <button class="hist-tab px-6 py-2.5 rounded-full font-sans text-xs uppercase tracking-wider transition-all bg-white/5 text-white/70 border border-white/10 hover:border-gold/30 hover:text-gold" data-filter="rekonstruksi">Rekonstruksi Belanda</button>
+        <button class="hist-tab px-6 py-2.5 rounded-full font-sans text-xs uppercase tracking-wider transition-all bg-white/5 text-white/70 border border-white/10 hover:border-gold/30 hover:text-gold" data-filter="tsunami">Tsunami 2004</button>
+        <button class="hist-tab px-6 py-2.5 rounded-full font-sans text-xs uppercase tracking-wider transition-all bg-white/5 text-white/70 border border-white/10 hover:border-gold/30 hover:text-gold" data-filter="revitalisasi">Revitalisasi 2017</button>
+      </div>
+
+      <!-- Grid masonry -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Item 1 (Kesultanan) -->
+        <div class="hist-item relative group overflow-hidden rounded-xl border border-white/10 bg-white/5 p-3 cursor-pointer reveal-on-scroll" data-category="kesultanan">
+          <div class="overflow-hidden rounded-lg aspect-[4/3] img-zoom-hover">
+            <img src="assets/img/sejarah-bg.jpg" alt="Lukisan Kuno Kompleks Baiturrahman" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 px-1">
+            <h4 class="hist-item-title font-serif text-gold font-bold text-base">Lukisan Sketsa Baiturrahman</h4>
+            <p class="hist-item-desc font-sans text-[11px] text-white/60 leading-relaxed mt-1">Menggambarkan bentuk awal masjid pada era keemasan Kesultanan Aceh Darussalam abad ke-17.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 (Kolonial) -->
+        <div class="hist-item relative group overflow-hidden rounded-xl border border-white/10 bg-white/5 p-3 cursor-pointer reveal-on-scroll delay-100" data-category="kolonial">
+          <div class="overflow-hidden rounded-lg aspect-[4/3] img-zoom-hover">
+            <img src="assets/img/sejarah-kohler.png" alt="Tugu Monumen Kohler di Courtyard" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 px-1">
+            <h4 class="hist-item-title font-serif text-gold font-bold text-base">Tugu Monumen Kohler</h4>
+            <p class="hist-item-desc font-sans text-[11px] text-white/60 leading-relaxed mt-1">Monumen tempat gugurnya Mayor Jenderal J.H.R. Kohler pada pertempuran sengit 1873.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 (Rekonstruksi) -->
+        <div class="hist-item relative group overflow-hidden rounded-xl border border-white/10 bg-white/5 p-3 cursor-pointer reveal-on-scroll delay-200" data-category="rekonstruksi">
+          <div class="overflow-hidden rounded-lg aspect-[4/3] img-zoom-hover">
+            <img src="assets/img/sejarah-vintage-comparison.png" alt="Baiturrahman tahun 1880-an" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 px-1">
+            <h4 class="hist-item-title font-serif text-gold font-bold text-base">Kubah Tunggal Awal</h4>
+            <p class="hist-item-desc font-sans text-[11px] text-white/60 leading-relaxed mt-1">Struktur pertama yang dibangun Belanda pasca-pembakaran, dengan kubah tunggal bergaya Mughal.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 (Tsunami) -->
+        <div class="hist-item relative group overflow-hidden rounded-xl border border-white/10 bg-white/5 p-3 cursor-pointer reveal-on-scroll" data-category="tsunami">
+          <div class="overflow-hidden rounded-lg aspect-[4/3] img-zoom-hover">
+            <img src="assets/img/sejarah-tsunami-miracle.png" alt="Suasana Masjid Baiturrahman Pasca Tsunami 2004" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 px-1">
+            <h4 class="hist-item-title font-serif text-gold font-bold text-base">Mukjizat Tsunami 2004</h4>
+            <p class="hist-item-desc font-sans text-[11px] text-white/60 leading-relaxed mt-1">Masjid tetap utuh berdiri tegak di tengah reruntuhan gempa dan sapuan gelombang besar di pusat kota Banda Aceh.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 (Revitalisasi) -->
+        <div class="hist-item relative group overflow-hidden rounded-xl border border-white/10 bg-white/5 p-3 cursor-pointer reveal-on-scroll delay-100" data-category="revitalisasi">
+          <div class="overflow-hidden rounded-lg aspect-[4/3] img-zoom-hover">
+            <img src="assets/img/sejarah-modern-comparison.png" alt="Pemasangan Payung Elektrik 2017" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 px-1">
+            <h4 class="hist-item-title font-serif text-gold font-bold text-base">Pembangunan Payung Elektrik</h4>
+            <p class="hist-item-desc font-sans text-[11px] text-white/60 leading-relaxed mt-1">Lansekap modernisasi pekarangan luar dengan pemasangan payung otomatis setara Madinah.</p>
+          </div>
+        </div>
+
+        <!-- Item 6 (Revitalisasi) -->
+        <div class="hist-item relative group overflow-hidden rounded-xl border border-white/10 bg-white/5 p-3 cursor-pointer reveal-on-scroll delay-200" data-category="revitalisasi">
+          <div class="overflow-hidden rounded-lg aspect-[4/3] img-zoom-hover">
+            <img src="assets/img/ornamen-kubah-bg.jpg" alt="Detail Dinding Pualam Kubah" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 px-1">
+            <h4 class="hist-item-title font-serif text-gold font-bold text-base">Detail Kubah di Malam Hari</h4>
+            <p class="hist-item-desc font-sans text-[11px] text-white/60 leading-relaxed mt-1">Sinar iluminasi lampu LED menyorot keagungan lengkung kubah hitam sugar-stone saat malam tiba.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Gallery Lightbox Modal overlay -->
+    <div id="gallery-lightbox" class="lightbox-modal hidden flex-col justify-center">
+      <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-gold flex items-center justify-center p-2 rounded bg-black/30 border border-white/10 cursor-pointer" aria-label="Tutup Galeri">
+        <iconify-icon icon="ph:x" width="24"></iconify-icon>
+      </button>
+      <div class="max-w-4xl max-h-[80vh] px-4 flex flex-col items-center">
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[70vh] rounded-lg border border-white/10 shadow-2xl object-contain">
+        <div id="lightbox-caption" class="text-center mt-6 text-white max-w-xl">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 8 — HISTORICAL STATISTICS
+       ========================================== -->
+  <section id="historical-stats" class="py-24 bg-ivory">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+        
+        <!-- Stat 1 -->
+        <div class="reveal-on-scroll flex flex-col">
+          <span class="block font-display text-4xl md:text-5xl text-emerald font-extrabold mb-1 stats-counter" data-suffix="+" data-target="400">0</span>
+          <span class="font-sans text-[10px] text-gold tracking-widest uppercase font-bold">Tahun Sejarah</span>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="reveal-on-scroll delay-100 flex flex-col">
+          <span class="block font-display text-4xl md:text-5xl text-emerald font-extrabold mb-1 stats-counter" data-target="7">0</span>
+          <span class="font-sans text-[10px] text-gold tracking-widest uppercase font-bold">Kubah Utama</span>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="reveal-on-scroll delay-200 flex flex-col">
+          <span class="block font-display text-4xl md:text-5xl text-emerald font-extrabold mb-1 stats-counter" data-target="4">0</span>
+          <span class="font-sans text-[10px] text-gold tracking-widest uppercase font-bold">Menara Pendamping</span>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="reveal-on-scroll flex flex-col">
+          <span class="block font-display text-4xl md:text-5xl text-emerald font-extrabold mb-1 stats-counter" data-target="1">0</span>
+          <span class="font-sans text-[10px] text-gold tracking-widest uppercase font-bold">Menara Induk</span>
+        </div>
+
+        <!-- Stat 5 -->
+        <div class="reveal-on-scroll delay-100 flex flex-col">
+          <span class="block font-display text-4xl md:text-5xl text-emerald font-extrabold mb-1 stats-counter" data-no-commas="true" data-target="2004">0</span>
+          <span class="font-sans text-[10px] text-gold tracking-widest uppercase font-bold">Tsunami Landmark</span>
+        </div>
+
+        <!-- Stat 6 -->
+        <div class="reveal-on-scroll delay-200 flex flex-col">
+          <span class="block font-display text-4xl md:text-5xl text-emerald font-extrabold mb-1 stats-counter" data-suffix="jt+" data-target="5">0</span>
+          <span class="font-sans text-[10px] text-gold tracking-widest uppercase font-bold">Pengunjung / Thn</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 9 — CTA
+       ========================================== -->
+  <section id="cta" class="relative py-32 flex items-center justify-center overflow-hidden min-h-[500px] bg-emerald-dark">
+    <!-- Background Night View -->
+    <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('assets/img/ornamen-kubah-bg.jpg');"></div>
+
+    <!-- Green Translucent and Pattern Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-emerald-dark/95 via-emerald-dark/85 to-emerald-dark/95 z-10"></div>
+    <div class="absolute inset-0 z-20 opacity-15 bg-geo-pattern pointer-events-none"></div>
+
+    <!-- Main Content -->
+    <div class="relative z-30 text-center max-w-3xl px-6 reveal-on-scroll">
+      <span class="text-gold font-sans font-bold text-xs uppercase tracking-widest mb-3 block">Ziarah Religi</span>
+      <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
+        Rasakan Sendiri Keagungan Sejarah yang Masih Hidup Hingga Hari Ini
+      </h2>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="index.html#visitor-donation" class="w-full sm:w-auto bg-gold hover:bg-gold-light text-emerald-dark font-sans font-bold text-xs px-8 py-4 rounded-md shadow-lg shadow-gold/20 transition-all flex items-center justify-center gap-2">
+          Panduan Kunjungan Wisatawan
+          <iconify-icon icon="ph:map-trifold" width="16"></iconify-icon>
+        </a>
+        <a href="#historical-gallery" class="w-full sm:w-auto border-2 border-white/20 text-white hover:bg-white hover:text-emerald-dark font-sans font-semibold text-xs px-8 py-3.5 rounded-md transition-all">
+          Lihat Galeri Lengkap
+        </a>
+        <a href="#" class="w-full sm:w-auto bg-white/10 hover:bg-white/15 border border-white/25 text-white font-sans font-semibold text-xs px-8 py-3.5 rounded-md transition-all flex items-center justify-center gap-2">
+          Virtual Tour 360°
+          <iconify-icon icon="ph:compass" width="16" class="text-gold"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       10. FOOTER
+       ========================================== -->
+  <footer id="footer" class="bg-[#0b1016] text-white/55 pt-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-12 border-b border-white/5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+      
+      <!-- Column 1: Brand Info -->
+      <div id="footer-brand" class="lg:col-span-4 flex flex-col gap-6">
+        <a href="index.html" id="footer-brand-logo" class="flex items-center gap-3">
+          <div id="footer-brand-emblem" class="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center text-emerald-dark font-display font-black text-lg shadow-md">
+            🕌
+          </div>
+          <div>
+            <h4 id="footer-brand-name" class="font-display font-bold text-sm text-white uppercase tracking-wider leading-none">Baiturrahman</h4>
+            <p id="footer-brand-loc" class="text-[10px] text-white/50 tracking-widest mt-1">BANDA ACEH, INDONESIA</p>
+          </div>
+        </a>
+        <p id="footer-brand-desc" class="font-sans text-xs md:text-sm text-white/40 leading-relaxed">
+          Episentrum kegiatan peradaban, ibadah, dakwah Islamiah dan saksi sejarah spiritual perjuangan rakyat Aceh. Terbuka melayani umat dan jamaah.
+        </p>
+
+        <!-- Social Media Buttons -->
+        <div id="footer-social" class="flex gap-2.5">
+          <a href="#" class="soc-btn w-9 h-9 rounded-md bg-white/5 hover:bg-gold/15 border border-white/10 hover:border-gold/30 text-white hover:text-gold flex items-center justify-center transition-all cursor-pointer" aria-label="Facebook Baiturrahman"><iconify-icon icon="ph:facebook-logo" width="18"></iconify-icon></a>
+          <a href="#" class="soc-btn w-9 h-9 rounded-md bg-white/5 hover:bg-gold/15 border border-white/10 hover:border-gold/30 text-white hover:text-gold flex items-center justify-center transition-all cursor-pointer" aria-label="Instagram Baiturrahman"><iconify-icon icon="ph:instagram-logo" width="18"></iconify-icon></a>
+          <a href="#" class="soc-btn w-9 h-9 rounded-md bg-white/5 hover:bg-gold/15 border border-white/10 hover:border-gold/30 text-white hover:text-gold flex items-center justify-center transition-all cursor-pointer" aria-label="YouTube Baiturrahman TV"><iconify-icon icon="ph:youtube-logo" width="18"></iconify-icon></a>
+          <a href="#" class="soc-btn w-9 h-9 rounded-md bg-white/5 hover:bg-gold/15 border border-white/10 hover:border-gold/30 text-white hover:text-gold flex items-center justify-center transition-all cursor-pointer" aria-label="TikTok Baiturrahman"><iconify-icon icon="ph:tiktok-logo" width="18"></iconify-icon></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="lg:col-span-2 flex flex-col gap-6">
+        <h5 class="footer-col-hd font-sans font-bold text-xs text-white tracking-widest uppercase">Menu Cepat</h5>
+        <ul class="footer-links flex flex-col gap-3 font-sans text-xs md:text-sm">
+          <li><a href="index.html" class="hover:text-gold transition-colors">Beranda Utama</a></li>
+          <li><a href="sejarah.html" class="hover:text-gold transition-colors">Profil Masjid</a></li>
+          <li><a href="index.html#services" class="hover:text-gold transition-colors">Layanan Publik</a></li>
+          <li><a href="index.html#events" class="hover:text-gold transition-colors">Agenda Kajian</a></li>
+          <li><a href="index.html#khutbah-archive-anchor" class="hover:text-gold transition-colors">Arsip Khutbah</a></li>
+          <li><a href="index.html#donation" class="hover:text-gold transition-colors">Donasi ZISWAF</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact Info -->
+      <div class="lg:col-span-3 flex flex-col gap-6">
+        <h5 class="footer-col-hd font-sans font-bold text-xs text-white tracking-widest uppercase">Sekretariat</h5>
+        <ul class="footer-links flex flex-col gap-4 font-sans text-xs md:text-sm">
+          <li class="flex items-start gap-2.5">
+            <iconify-icon icon="ph:map-pin" class="text-gold flex-shrink-0 mt-0.5" width="18"></iconify-icon>
+            <span class="leading-relaxed text-white/40">Jl. Moh. Jam No.1, Kampung Baru, Kec. Baiturrahman, Kota Banda Aceh, Aceh 23242</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <iconify-icon icon="ph:phone" class="text-gold flex-shrink-0" width="18"></iconify-icon>
+            <span class="text-white/40">(0651) 22442</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <iconify-icon icon="ph:envelope" class="text-gold flex-shrink-0" width="18"></iconify-icon>
+            <span class="text-white/40">info@mesjidrayabaiturrahman.or.id</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Google Maps Embed -->
+      <div class="lg:col-span-3 flex flex-col gap-6">
+        <h5 class="footer-col-hd font-sans font-bold text-xs text-white tracking-widest uppercase">Lokasi Peta</h5>
+        <div id="footer-map-preview" class="w-full h-32 rounded-lg overflow-hidden border border-white/10 shadow-md">
+          <img class="w-full aspect-video object-cover" data-aspect-ratio="16:9"
+            data-query="Google Maps satellite aerial view Banda Aceh city center Masjid Raya Baiturrahman area street map style emerald green landmark marker urban Indonesia overhead"
+            src="https://storage.googleapis.com/banani-generated-images/generated-images/e891ee11-d281-4cbb-9e57-bf5e1d372531.jpg"
+            alt="Peta Lokasi Masjid Raya Baiturrahman" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Area -->
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-8 text-center flex flex-col sm:flex-row items-center justify-between gap-4 font-sans text-xs text-white/30">
+      <p>© 2026 Badan Pengelola Masjid Raya Baiturrahman Banda Aceh. Hak Cipta Dilindungi.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:underline">Kebijakan Privasi</a>
+        <span>•</span>
+        <a href="#" class="hover:underline">Ketentuan Ketentuan</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Local Interactivity Logic Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/sejarah.js"></script>
+</body>
+</html>
