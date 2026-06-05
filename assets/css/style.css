@@ -1,0 +1,178 @@
+/* Enhanced CSS Stylesheet - Baiturrahman Mosque Homepage */
+
+:root {
+  --emerald: #0f5132;
+  --emerald-light: #166534;
+  --emerald-dark: #0a3d26;
+  --gold: #d4af37;
+  --gold-light: #e8c84a;
+  --gold-dim: #c9a227;
+  --ivory: #faf8f3;
+  --charcoal: #1f2937;
+  --charcoal-light: #374151;
+  --soft-gray: #f3f4f6;
+  --soft-gray-2: #e5e7eb;
+  
+  /* Spring Physics / Custom Easing */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--emerald-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+  border-radius: 4px;
+  border: 2px solid var(--emerald-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--ivory);
+  color: var(--charcoal);
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background-color: var(--gold);
+  color: var(--emerald-dark);
+}
+
+/* Background Geometric Patterns */
+.bg-geo-pattern {
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='1'%3E%3Cpolygon points='40,4 76,22 76,58 40,76 4,58 4,22'/%3E%3Cpolygon points='40,16 66,29 66,51 40,64 14,51 14,29'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+/* Dynamic Island Navbar Morphing Transition */
+.navbar-transition {
+  transition: 
+    width 0.6s var(--ease-spring),
+    max-width 0.6s var(--ease-spring),
+    border-radius 0.6s var(--ease-spring),
+    background-color 0.5s var(--ease-smooth),
+    backdrop-filter 0.5s var(--ease-smooth),
+    padding 0.5s var(--ease-smooth),
+    height 0.5s var(--ease-smooth),
+    top 0.6s var(--ease-spring),
+    border 0.5s var(--ease-smooth),
+    box-shadow 0.5s var(--ease-smooth),
+    transform 0.6s var(--ease-spring);
+}
+
+/* Dynamic Island State Class */
+.navbar-scrolled {
+  position: fixed !important;
+  top: 1rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 90% !important;
+  max-width: 1140px !important;
+  border-radius: 9999px !important;
+  height: 4rem !important;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+  background-color: rgba(10, 38, 24, 0.58) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.3), 
+    0 10px 10px -5px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Draw gold underline under menu items on hover */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--gold);
+  transform-origin: bottom right;
+  transition: transform 0.35s var(--ease-smooth);
+}
+.nav-link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Scroll-Driven Reveal Base Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 
+    opacity 0.8s var(--ease-smooth), 
+    transform 0.8s var(--ease-smooth);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Delay Helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Micro-Animations & Keyframes */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  }
+}
+
+/* Pulse Highlight for Active Prayer Row */
+.prayer-row.active-prayer {
+  animation: pulse-gold 3s infinite ease-in-out;
+}
+
+/* Hover scales and card expansions */
+.card-hover-lift {
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
+}
+.card-hover-lift:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 25px 50px -12px rgba(10, 38, 24, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.img-zoom-hover {
+  overflow: hidden;
+}
+.img-zoom-hover img {
+  transition: transform 0.6s var(--ease-smooth);
+}
+.img-zoom-hover:hover img {
+  transform: scale(1.06);
+}
