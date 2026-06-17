@@ -10,10 +10,17 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 class Post extends Model implements HasMedia
 {
     use InteractsWithMedia;
+
     protected $fillable = [
-        'title', 'slug', 'content', 'excerpt', 
-        'type', 'category_id', 'author_id', 
-        'is_published', 'published_at',
+        'title',
+        'slug',
+        'content',
+        'excerpt',
+        'type',
+        'category_id',
+        'users_id',
+        'is_published',
+        'published_at',
     ];
 
     protected function casts(): array
@@ -24,40 +31,52 @@ class Post extends Model implements HasMedia
         ];
     }
 
-    /** Daftarkan Spatie Media Collections.
-     * 'thumbnail' -> single-file, otomatis generate konversi untuk ukuran kecil.
+    /**
+     * Daftarkan Spatie Media Collections.
+     * 'thumbnail' → single-file, otomatis generate konversi untuk ukuran kecil.
      */
-    public function registerMediaCollections(): void {
+    public function registerMediaCollections(): void
+    {
         $this->addMediaCollection('thumbnail')
-        ->singleFile()
-        ->acceptsMimeTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp']);
+            ->singleFile()
+            ->acceptsMimeTypes(['image/jpeg', 'image/png', 'image/webp']);
     }
 
+    /**
+     * Daftarkan konversi gambar (resize otomatis saat upload).
+     */
     public function registerMediaConversions(?Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-            ->width(300)
-            ->height(200)
-            ->sharpen(10)
+            ->width(400)
+            ->height(300)
+            ->sharpen(5)
             ->nonQueued();
     }
 
-    public function category() {
+    // ── Relasi ──────────────────────────────────────────────
+
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 
-    public function author() {
+    public function author()
+    {
         return $this->belongsTo(User::class, 'author_id');
     }
 
-    // Scope helpers untuk filament
-    public function scopePublished($query) {
+    // ── Scope helpers untuk Filament ────────────────────────
+
+    public function scopePublished($query)
+    {
         return $query->where('is_published', true)
-        ->whereNotNull('published_at')
-        ->where('published_at', '<=', now());
+            ->whereNotNull('published_at')
+            ->where('published_at', '<=', now());
     }
 
-    public function scopeOfType($query, $type) {
+    public function scopeOfType($query, string $type)
+    {
         return $query->where('type', $type);
     }
 }

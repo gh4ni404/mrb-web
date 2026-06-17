@@ -20,8 +20,8 @@ class GalleryForm
                     ->default(null)
                     ->columnSpanFull(),
                 Select::make('type')
-                    ->options(['foto' => 'Foto', 'video' => 'Video'])
-                    ->default('foto')
+                    ->options(['image' => 'Image', 'video' => 'Video'])
+                    ->default('image')
                     ->required(),
                 TextInput::make('category_id')
                     ->numeric()

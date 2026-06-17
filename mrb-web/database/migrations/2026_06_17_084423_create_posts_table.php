@@ -18,29 +18,29 @@ return new class extends Migration
             $table->longText('content');
             $table->text('excerpt')->nullable();
 
-            // Jenis Konten: Berita Umum, Artikel keislaman, atau arsip khutbah
+            // Jenis konten: berita umum, artikel keislaman, atau arsip khutbah
             $table->enum('type', ['berita', 'artikel', 'khutbah'])->default('berita');
 
-            // Relasi ke table categories (nullable agar fleksible)
+            // Relasi ke tabel categories (nullable agar fleksibel)
             $table->foreignId('category_id')
-            ->nullable()
-            ->constrained('categories')
-            ->nullOnDelete();
+                ->nullable()
+                ->constrained('categories')
+                ->nullOnDelete();
 
             // Penulis/admin yang membuat postingan
-            $table->foreignId('author_id')
-            ->constrained('users')
-            ->cascadeOnDelete();
+            $table->foreignId('users_id')
+                ->constrained('users')
+                ->cascadeOnDelete();
 
-            // Thumbnail dikelola oleh Spatie Media Library (tidak perlu kolom path)
-            // Tambahkan trait HasMedia + InteractsWithMedia pada model Post untuk mengelola media
-            // Daftarkan collection: $this->addMediaCollection('thumbnails')->singleFile();
+            // Thumbnail dikelola oleh Spatie Media Library (tidak perlu kolom path).
+            // Tambahkan trait HasMedia + InteractsWithMedia pada model Post.
+            // Daftarkan collection: $this->addMediaCollection('thumbnail')->singleFile();
 
             $table->boolean('is_published')->default(false);
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
 
-            // Indeks untuk query filtering yang umum dipakai
+            // Index untuk query filtering yang umum dipakai
             $table->index(['type', 'is_published']);
             $table->index('published_at');
         });

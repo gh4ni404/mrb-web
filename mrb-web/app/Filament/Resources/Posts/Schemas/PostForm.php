@@ -32,7 +32,7 @@ class PostForm
                 TextInput::make('category_id')
                     ->numeric()
                     ->default(null),
-                TextInput::make('author_id')
+                TextInput::make('users_id')
                     ->required()
                     ->numeric(),
                 Toggle::make('is_published')

@@ -17,22 +17,22 @@ return new class extends Migration
             $table->text('description')->nullable();
 
             // Tipe media dalam galeri ini (apakah album foto atau video)
-            $table->enum('type', ['foto', 'video'])->default('foto');
+            $table->enum('type', ['image', 'video'])->default('image');
 
             // Relasi ke categories (type = 'gallery'), misal: Arsitektur, Kegiatan, Ramadan
             $table->foreignId('category_id')
-            ->nullable()
-            ->constrained('categories')
-            ->nullOnDelete();
+                ->nullable()
+                ->constrained('categories')
+                ->nullOnDelete();
 
             $table->boolean('is_featured')->default(false);
             $table->timestamps();
 
-            // File/foto dikelola sepenuhnya oleh Spatie Media Library (tidak perlu kolom path)
-            // Tambahkan trait HasMedia + InteractsWithMedia pada model Gallery untuk mengelola media
-            // Daftarkan dua collection: 
-            //  $this->addMediaCollection('images'); -> untuk album foto (multi-file)
-            //  $this->addMediaCollection('video')->singleFile(); -> untuk video (single-file)
+            // File/foto dikelola sepenuhnya oleh Spatie Media Library.
+            // Tambahkan trait HasMedia + InteractsWithMedia pada model Gallery.
+            // Daftarkan dua collection:
+            //   $this->addMediaCollection('images');        → untuk album foto (multi-file)
+            //   $this->addMediaCollection('video')->singleFile(); → untuk video tunggal
         });
     }
 

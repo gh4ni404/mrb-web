@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            // Membedakan kategori milik modul mana :
-            // 'post'       -> untuk berita, artikel, khutbah
-            // 'gallery'    -> untuk galeri foto, video
+            // Membedakan kategori milik modul mana:
+            // 'post'    → untuk Berita, Artikel, Khutbah
+            // 'gallery' → untuk Galeri Foto/Video
             $table->enum('type', ['post', 'gallery'])->default('post');
             $table->text('description')->nullable();
             $table->timestamps();

@@ -25,7 +25,7 @@ class PostsTable
                 TextColumn::make('category_id')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('author_id')
+                TextColumn::make('users_id')
                     ->numeric()
                     ->sortable(),
                 IconColumn::make('is_published')

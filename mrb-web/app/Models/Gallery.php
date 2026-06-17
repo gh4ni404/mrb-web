@@ -9,7 +9,14 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Gallery extends Model implements HasMedia
 {
     use InteractsWithMedia;
-    protected $fillable = ['title', 'description', 'type', 'category_id', 'is_featured',];
+
+    protected $fillable = [
+        'title',
+        'description',
+        'type',
+        'category_id',
+        'is_featured',
+    ];
 
     protected function casts(): array
     {
@@ -19,20 +26,23 @@ class Gallery extends Model implements HasMedia
     }
 
     /**
-     * 'images' -> multi-file untuk album foto
-     * 'video' -> single-file untuk video embed/upload
+     * 'images' → multi-file untuk album foto
+     * 'video'  → single-file untuk video embed/upload
      */
-    public function registerMediaCollections(): void {
+    public function registerMediaCollections(): void
+    {
         $this->addMediaCollection('images')
-        ->acceptsMimeTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp']);
+            ->acceptsMimeTypes(['image/jpeg', 'image/png', 'image/webp']);
 
         $this->addMediaCollection('video')
-        ->singleFile()
-        ->acceptsMimeTypes(['video/mp4', 'video/webm', 'video/ogg']);
+            ->singleFile()
+            ->acceptsMimeTypes(['video/mp4', 'video/webm']);
     }
 
-    // Relasi
-    public function category() {
+    // ── Relasi ──────────────────────────────────────────────
+
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 }
