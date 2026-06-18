@@ -25,13 +25,13 @@ class PostsTable
                     ->color('warning'),
 
                 TextColumn::make('author_role')
+                    ->color('success')
                     ->label('Author Role')
                     ->getStateUsing(
                         fn($record) =>
                         str($record->author?->getRoleNames()->first() ?? 'User')->replace('_', ' ')->title()
                     )
                     ->badge()
-                    ->color('success')
                     ->sortable(false)
                     ->toggleable(),
 

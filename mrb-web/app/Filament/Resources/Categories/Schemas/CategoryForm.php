@@ -20,7 +20,8 @@ class CategoryForm
                 Select::make('type')
                     ->options(['post' => 'Post', 'gallery' => 'Gallery'])
                     ->default('post')
-                    ->required(),
+                    ->required()
+                    ->native(false),
                 Textarea::make('description')
                     ->default(null)
                     ->columnSpanFull(),
