@@ -19,8 +19,8 @@ class EditPost extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make()->label(''),
-            DeleteAction::make()->label(''),
+            ViewAction::make(),
+            DeleteAction::make(),
         ];
     }
 }
