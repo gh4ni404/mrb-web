@@ -15,6 +15,11 @@ class CategoryInfolist
                 TextEntry::make('slug'),
                 TextEntry::make('type')
                     ->badge(),
+                TextEntry::make('creator.name')
+                    ->label('Created by')
+                    ->formatStateUsing(fn ($state, $record) => $record->creator
+                        ? $record->creator->name.' ('.$record->creator->roles->pluck('name')->implode(', ').')'
+                        : '-'),
                 TextEntry::make('description')
                     ->placeholder('-')
                     ->columnSpanFull(),

@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Galleries\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
@@ -38,8 +39,9 @@ class GalleriesTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
+                ViewAction::make()->label(''),
+                EditAction::make()->label(''),
+                DeleteAction::make()->label(''),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

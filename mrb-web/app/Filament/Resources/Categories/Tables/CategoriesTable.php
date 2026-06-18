@@ -21,6 +21,13 @@ class CategoriesTable
                     ->searchable(),
                 TextColumn::make('type')
                     ->badge(),
+                TextColumn::make('creator.name')
+                    ->label('Created by')
+                    ->searchable()
+                    ->color('warning')
+                    ->formatStateUsing(fn ($record) => $record->creator
+                        ? $record->creator->name.' ('.$record->creator->roles->pluck('name')->implode(', ').')'
+                        : '-'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -34,8 +41,8 @@ class CategoriesTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
+                ViewAction::make()->label(''),
+                EditAction::make()->label(''),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
