@@ -33,8 +33,7 @@ class PostsTable
                     ->badge()
                     ->color('success')
                     ->sortable(false)
-                    ->toggleable()
-                ,
+                    ->toggleable(),
 
                 TextColumn::make('title')
                     ->searchable(),
