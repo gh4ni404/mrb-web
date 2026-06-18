@@ -22,15 +22,15 @@ class UsersTable
                     ->searchable(),
                 TextColumn::make('role')
                     ->label('Role')
-                    ->getStateUsing(fn($record) => $record->getRoleNames()->first() ?? 'User')
+                    ->getStateUsing(fn ($record) => $record->getRoleNames()->first() ?? 'User')
                     ->badge()
-                    ->color(fn($state) => match ($state){
+                    ->color(fn ($state) => match ($state) {
                         'super_admin' => 'success',
                         'editor' => 'warning',
                         'author' => 'info',
                         default => 'gray',
                     })
-                    ->formatStateUsing(fn($state) => str($state)->replace('_', ' ')->title())
+                    ->formatStateUsing(fn ($state) => str($state)->replace('_', ' ')->title())
                     ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('email_verified_at')
                     ->dateTime()

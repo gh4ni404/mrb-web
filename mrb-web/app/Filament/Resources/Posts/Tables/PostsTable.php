@@ -7,7 +7,6 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
-use Filament\Forms\Components\Toggle;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -28,8 +27,7 @@ class PostsTable
                     ->color('success')
                     ->label('Author Role')
                     ->getStateUsing(
-                        fn($record) =>
-                        str($record->author?->getRoleNames()->first() ?? 'User')->replace('_', ' ')->title()
+                        fn ($record) => str($record->author?->getRoleNames()->first() ?? 'User')->replace('_', ' ')->title()
                     )
                     ->badge()
                     ->sortable(false)

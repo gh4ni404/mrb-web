@@ -16,7 +16,7 @@ class UserInfolist
                     ->label('Role')
                     ->disabled()
                     ->getStateUsing(
-                        fn($record) => str($record->getRoleNames()->first() ?? 'User')
+                        fn ($record) => str($record->getRoleNames()->first() ?? 'User')
                             ->replace('_', ' ')
                             ->title()
                     ),

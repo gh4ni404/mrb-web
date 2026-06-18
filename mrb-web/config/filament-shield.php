@@ -178,7 +178,7 @@ return [
                 'delete',
             ],
             PostResource::class => [
-                'publish'
+                'publish',
             ],
         ],
         'exclude' => [

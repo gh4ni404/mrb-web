@@ -19,8 +19,7 @@ class ViewUser extends ViewRecord
                 ->label('Kembali')
                 ->color('gray')
                 ->url(UserResource::getUrl('index'))
-                ->icon(Heroicon::ArrowLeft)
-                ,
+                ->icon(Heroicon::ArrowLeft),
             EditAction::make(),
         ];
     }

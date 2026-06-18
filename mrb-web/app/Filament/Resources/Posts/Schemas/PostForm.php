@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
-use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Auth;
@@ -24,8 +23,7 @@ class PostForm
                     ->maxLength(255)
                     ->live(onBlur: true)
                     ->afterStateUpdated(
-                        fn(string $operation, $state, callable $set) =>
-                        $operation === 'create'
+                        fn (string $operation, $state, callable $set) => $operation === 'create'
                         ? $set('slug', Str::slug($state))
                         : null
                     ),
@@ -76,11 +74,11 @@ class PostForm
                     ->preload()
                     ->createOptionForm([
                         TextInput::make('name')->label('Nama')->required(),
-                        TextInput::make('slug')->label('Slug')->required()
+                        TextInput::make('slug')->label('Slug')->required(),
                     ]),
                 Toggle::make('is_published')
                     ->label('Published')
-                    ->visible(fn() => Auth::user()->can('Publish:Post'))
+                    ->visible(fn () => Auth::user()->can('Publish:Post'))
                     ->required(),
             ]);
     }
