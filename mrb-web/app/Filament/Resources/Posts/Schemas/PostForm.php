@@ -8,6 +8,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Auth;
 
 class PostForm
 {
@@ -32,12 +33,10 @@ class PostForm
                 TextInput::make('category_id')
                     ->numeric()
                     ->default(null),
-                TextInput::make('users_id')
-                    ->required()
-                    ->numeric(),
                 Toggle::make('is_published')
+                    ->label('Published')
+                    ->visible(fn() => Auth::user()->can('Publish:Post'))
                     ->required(),
-                DateTimePicker::make('published_at'),
             ]);
     }
 }

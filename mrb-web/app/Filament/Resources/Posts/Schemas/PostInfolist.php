@@ -24,8 +24,8 @@ class PostInfolist
                 TextEntry::make('category_id')
                     ->numeric()
                     ->placeholder('-'),
-                TextEntry::make('users_id')
-                    ->numeric(),
+                TextEntry::make('author.name')
+                    ->label('Author'),
                 IconEntry::make('is_published')
                     ->boolean(),
                 TextEntry::make('published_at')

@@ -63,7 +63,7 @@ class Post extends Model implements HasMedia
 
     public function author()
     {
-        return $this->belongsTo(User::class, 'author_id');
+        return $this->belongsTo(User::class, 'users_id');
     }
 
     // ── Scope helpers untuk Filament ────────────────────────

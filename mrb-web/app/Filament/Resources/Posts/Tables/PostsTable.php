@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\Posts\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Forms\Components\Toggle;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -16,6 +18,24 @@ class PostsTable
     {
         return $table
             ->columns([
+                TextColumn::make('author.name')
+                    ->label('Author')
+                    ->sortable()
+                    ->searchable()
+                    ->color('warning'),
+
+                TextColumn::make('author_role')
+                    ->label('Author Role')
+                    ->getStateUsing(
+                        fn($record) =>
+                        str($record->author?->getRoleNames()->first() ?? 'User')->replace('_', ' ')->title()
+                    )
+                    ->badge()
+                    ->color('success')
+                    ->sortable(false)
+                    ->toggleable()
+                ,
+
                 TextColumn::make('title')
                     ->searchable(),
                 TextColumn::make('slug')
@@ -23,9 +43,6 @@ class PostsTable
                 TextColumn::make('type')
                     ->badge(),
                 TextColumn::make('category_id')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('users_id')
                     ->numeric()
                     ->sortable(),
                 IconColumn::make('is_published')
@@ -48,6 +65,7 @@ class PostsTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
