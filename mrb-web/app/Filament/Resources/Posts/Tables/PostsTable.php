@@ -8,7 +8,6 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
@@ -31,7 +30,7 @@ class PostsTable
                     ->color('success')
                     ->label('Author Role')
                     ->getStateUsing(
-                        fn($record) => str($record->author?->getRoleNames()->first() ?? 'User')->replace('_', ' ')->title()
+                        fn ($record) => str($record->author?->getRoleNames()->first() ?? 'User')->replace('_', ' ')->title()
                     )
                     ->badge()
                     ->sortable(false)
@@ -48,11 +47,11 @@ class PostsTable
                     ->searchable()
                     ->sortable()
                     ->limit(25)
-                    ->tooltip(fn($record) => $record->title),
+                    ->tooltip(fn ($record) => $record->title),
 
                 TextColumn::make('type')
                     ->label('Jenis')
-                    ->formatStateUsing(fn(string $state): string => match ($state) {
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
                         'berita' => 'Berita',
                         'artikel' => 'Artikel',
                         'khutbah' => 'Khutbah',
@@ -91,7 +90,7 @@ class PostsTable
                     ->searchable()
                     ->preload(),
 
-                    TernaryFilter::make('is_published')
+                TernaryFilter::make('is_published')
                     ->label('Status')
                     ->trueLabel('Sudah Dipublish')
                     ->falseLabel('Draft'),
@@ -107,6 +106,6 @@ class PostsTable
                 ]),
             ])
             ->recordActionsColumnLabel('Aksi')
-            ->defaultSort('published_at', 'desc');
+            ->defaultSort('created_at', 'desc');
     }
 }

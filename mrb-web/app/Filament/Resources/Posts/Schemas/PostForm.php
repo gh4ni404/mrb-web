@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\Posts\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -26,7 +25,7 @@ class PostForm
                     ->maxLength(255)
                     ->live(onBlur: true)
                     ->afterStateUpdated(
-                        fn(string $operation, $state, callable $set) => $operation === 'create'
+                        fn (string $operation, $state, callable $set) => $operation === 'create'
                         ? $set('slug', Str::slug($state))
                         : null
                     ),
@@ -76,7 +75,7 @@ class PostForm
 
                 Select::make('category_id')
                     ->label('Kategori')
-                    ->relationship('category', 'name', fn($query) => $query->where('type', 'post'))
+                    ->relationship('category', 'name', fn ($query) => $query->where('type', 'post'))
                     ->searchable()
                     ->nullable()
                     ->preload()
@@ -89,12 +88,13 @@ class PostForm
                     ->collection('thumbnail')
                     ->image()
                     ->maxSize(2048)
+                    ->disk('public')
                     ->helperText('Maks 2MB. Rasio disarankan 4:3.')
                     ->columnSpanFull(),
 
                 Toggle::make('is_published')
                     ->label('Published')
-                    ->visible(fn() => Auth::user()->can('Publish:Post'))
+                    ->visible(fn () => Auth::user()->can('Publish:Post'))
                     ->required(),
 
                 DateTimePicker::make('published_at')
@@ -102,7 +102,7 @@ class PostForm
                     ->nullable()
                     ->native(false)
                     ->displayFormat('d M Y H:i')
-                    ->visible(fn() => Auth::user()->can('Publish:Post'))
+                    ->visible(fn () => Auth::user()->can('Publish:Post'))
                     ->helperText('Kosongkan untuk publish sekarang.'),
             ]);
     }

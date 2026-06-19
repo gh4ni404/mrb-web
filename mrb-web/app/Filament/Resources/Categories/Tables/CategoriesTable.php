@@ -28,13 +28,14 @@ class CategoriesTable
                     ->searchable()
                     ->color('warning')
                     ->formatStateUsing(function ($record) {
-                        if (!$record->creator)
+                        if (! $record->creator) {
                             return '-';
+                        }
 
                         $roleString = $record->creator->roles->pluck('name')->implode(', ');
                         $formattedRoles = str_replace('_', ' ', $roleString);
 
-                        return $record->creator->name . ' (' . Str::title($formattedRoles) . ')';
+                        return $record->creator->name.' ('.Str::title($formattedRoles).')';
                     }),
                 TextColumn::make('created_at')
                     ->dateTime()
