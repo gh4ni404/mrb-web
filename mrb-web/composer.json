@@ -44,8 +44,17 @@
             "@php artisan key:generate",
             "@php artisan migrate --force",
             "@php artisan shield:generate --all --panel=admin --option=permissions --no-interaction",
+            "@php artisan config:cache",
+            "@php artisan event:cache",
+            "@php artisan view:cache",
             "npm install --ignore-scripts",
             "npm run build"
+        ],
+        "optimize-all": [
+            "@php artisan config:cache",
+            "@php artisan event:cache",
+            "@php artisan view:cache",
+            "composer dump-autoload -o"
         ],
         "create:admin": [
             "Composer\\Config::disableProcessTimeout",

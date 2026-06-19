@@ -15,6 +15,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class CategoryResource extends Resource
 {
@@ -35,6 +36,11 @@ class CategoryResource extends Resource
     public static function table(Table $table): Table
     {
         return CategoriesTable::configure($table);
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->with(['creator.roles']);
     }
 
     public static function getRelations(): array

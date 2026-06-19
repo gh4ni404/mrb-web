@@ -21,8 +21,8 @@ class PostInfolist
                     ->columnSpanFull(),
                 TextEntry::make('type')
                     ->badge(),
-                TextEntry::make('category_id')
-                    ->numeric()
+                TextEntry::make('category.name')
+                    ->label('Category')
                     ->placeholder('-'),
                 TextEntry::make('author.name')
                     ->label('Author'),
