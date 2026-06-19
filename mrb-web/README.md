@@ -7,6 +7,67 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## MRB WEB
+
+Filament admin panel built with Laravel.
+
+## Persyaratan
+
+- PHP ^8.3
+- Composer
+- Node.js & npm
+- MySQL / MariaDB
+
+## Setup Awal
+
+1. Clone
+```bash
+git clone https://github.com/gh4ni404/mrb-web.git
+```
+2. Masuk direktori
+```bash 
+cd mrb-web
+```
+3. Setup otomatis
+```bash 
+composer run setup
+```
+4. Assign role super_admin ke user tersebut
+```bash 
+php artisan shield:super-admin
+```
+## Menjalankan Aplikasi
+```bash 
+composer run dev
+```
+
+Akses panel admin di `http://localhost:8000/admin`.
+
+## Catatan
+
+- Setup (`composer run setup`) sudah menjalankan `shield:generate` untuk membuat permission records.
+- Jika ada resource baru ditambahkan, jalankan ulang:
+```bash
+php artisan shield generate --all --panel=admin --option=permissions --no-interaction
+```
+- Untuk membuat user admin tambahan:
+```bash
+composer run create:admin 
+```
+```bash
+composer run assign:admin
+```
+
+## Script Tersedia
+
+| Perintah | Kegunaan |
+|---|---|
+| `composer run setup` | Setup awal (install, migrate, generate permissions, build assets) |
+| `composer run dev` | Jalankan dev server + queue + Vite |
+| `composer run create:admin` | Buat user filament baru |
+| `composer run assign:admin` | Asssign super_admin ke user |
+| `composer run test` | Jalankan test |
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
