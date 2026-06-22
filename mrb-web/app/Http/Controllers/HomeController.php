@@ -13,9 +13,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $latestNews = Post::with('categories')->published()->ofType('berita')->latest('published_at')->take(4)->get();
+        $latestNews = Post::with('categories')->published()->ofType('berita')->latest('published_at')->take(5)->get();
 
-        $latestArticle = Post::with('categories')->published()->ofType('artikel')->latest('published_at')->take(3)->get();
+        $latestArticle = Post::with('categories')->published()->ofType('artikel')->latest('published_at')->take(5)->get();
         
         $latestKhutbah = Post::published()->ofType('khutbah')->latest('created_at')->take(5)->get();
 
