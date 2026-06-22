@@ -26,7 +26,13 @@ class PostInfolist
                     ->badge()
                     ->placeholder('-'),
                 TextEntry::make('author.name')
-                    ->label('Author'),
+                    ->label('Author')
+                    ->visible(fn ($record) => $record->type !== 'khutbah'),
+
+                TextEntry::make('khatib_name')
+                    ->label('Khatib / Penceramah')
+                    ->visible(fn ($record) => $record->type === 'khutbah')
+                    ->placeholder('-'),
                 IconEntry::make('is_published')
                     ->boolean(),
                 TextEntry::make('published_at')

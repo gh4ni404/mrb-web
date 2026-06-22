@@ -251,17 +251,17 @@
 
     <div class="max-w-4xl mx-auto px-6 reveal-on-scroll">
         <div id="before-after-slider" class="before-after-container aspect-[16/10] md:aspect-[16/9]">
-            <img src="{{ asset('assets/img/sejarah-bg.jpg') }}" alt="Baiturrahman Vintage Era" class="w-full h-full object-cover">
+            <img src="{{ asset('assets/img/after.png') }}" alt="Baiturrahman Pasca Tsunami" class="before-image">
             <div class="after-image overflow-hidden">
-                <img src="{{ asset('assets/img/sejarah-bg.jpg') }}" alt="Baiturrahman Modern Era" class="w-full h-full object-cover">
+                <img src="{{ asset('assets/img/before.png') }}" alt="Baiturrahman Masa Kini" class="w-full h-full object-cover">
             </div>
             <div class="slider-handle">
                 <div class="slider-handle-circle">
                     <iconify-icon icon="ph:arrows-left-right" class="text-gold"></iconify-icon>
                 </div>
             </div>
-            <span class="absolute bottom-4 left-4 bg-charcoal/80 text-white text-[10px] tracking-widest font-sans font-bold px-3.5 py-1.5 rounded uppercase z-20">Abad ke-19</span>
-            <span class="absolute bottom-4 right-4 bg-emerald-dark/80 text-gold text-[10px] tracking-widest font-sans font-bold px-3.5 py-1.5 rounded uppercase z-20 font-bold">Era Digital</span>
+            <span class="absolute bottom-4 left-4 bg-charcoal/80 text-white text-[10px] tracking-widest font-sans font-bold px-3.5 py-1.5 rounded uppercase z-20">Pasca Tsunami</span>
+            <span class="absolute bottom-4 right-4 bg-emerald-dark/80 text-gold text-[10px] tracking-widest font-sans font-bold px-3.5 py-1.5 rounded uppercase z-20 font-bold">Masa Kini</span>
         </div>
     </div>
 </section>
@@ -415,8 +415,16 @@
         inset: 0;
         width: 50%;
         border-right: 3px solid #d4af37;
+        overflow: hidden;
     }
     .before-after-container .after-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left;
+    }
+    .before-after-container .before-image {
         display: block;
         width: 100%;
         height: 100%;

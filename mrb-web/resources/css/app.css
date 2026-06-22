@@ -158,6 +158,38 @@ html {
     animation: pulse-gold 3s infinite ease-in-out;
 }
 
+.glass-panel {
+    background: linear-gradient(145deg, rgba(10, 38, 24, 0.45), rgba(15, 81, 50, 0.35));
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
+
+.glass-panel:hover {
+    background: linear-gradient(145deg, rgba(10, 38, 24, 0.5), rgba(15, 81, 50, 0.4));
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(212, 175, 55, 0.15);
+}
+
+.gold-glow {
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(212, 175, 55, 0.08),
+        inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
+
+.gold-glow:hover {
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(212, 175, 55, 0.12),
+        inset 0 1px 0 rgba(212, 175, 55, 0.15);
+}
+
 .card-hover-lift {
     transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
 }

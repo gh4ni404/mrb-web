@@ -16,7 +16,7 @@ class HomeController extends Controller
         $latestNews = Post::with('categories')->published()->ofType('berita')->latest('published_at')->take(5)->get();
 
         $latestArticle = Post::with('categories')->published()->ofType('artikel')->latest('published_at')->take(5)->get();
-        
+
         $latestKhutbah = Post::published()->ofType('khutbah')->latest('created_at')->take(5)->get();
 
         $featuredGalleries = Gallery::where('is_featured', true)->latest()->take(5)->get();

@@ -24,10 +24,18 @@ class PostsTable
                     ->label('Author')
                     ->sortable()
                     ->searchable()
-                    ->color('warning'),
+                    ->color('warning')
+                    ->toggleable(),
+
+                TextColumn::make('khatib_name')
+                    ->label('Khatib')
+                    ->searchable()
+                    ->placeholder('-')
+                    ->color('success')
+                    ->visible(fn ($record) => $record?->type === 'khutbah'),
 
                 TextColumn::make('author_role')
-                    ->color('success')
+                    ->color('info')
                     ->label('Author Role')
                     ->getStateUsing(
                         fn ($record) => str($record->author?->getRoleNames()->first() ?? 'User')->replace('_', ' ')->title()

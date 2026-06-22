@@ -45,6 +45,14 @@ class PostForm
                     ->helperText('Tampil di card berita. Kosongkan unuk diisi otomatis dari konten.')
                     ->columnSpanFull(),
 
+                TextInput::make('khatib_name')
+                    ->label('Nama Khatib / Penceramah')
+                    ->maxLength(255)
+                    ->nullable()
+                    ->helperText('Diisi dengan nama yang membawakan khutbah')
+                    ->visible(fn (callable $get) => $get('type') === 'khutbah')
+                    ->required(fn (callable $get) => $get('type') === 'khutbah'),
+
                 RichEditor::make('content')
                     ->label('Isi Konten')
                     ->required()
@@ -71,7 +79,8 @@ class PostForm
                     ->options(['berita' => 'Berita', 'artikel' => 'Artikel', 'khutbah' => 'Khutbah'])
                     ->default('berita')
                     ->required()
-                    ->native(false),
+                    ->native(false)
+                    ->live(),
 
                 Select::make('categories')
                     ->label('Kategori')
