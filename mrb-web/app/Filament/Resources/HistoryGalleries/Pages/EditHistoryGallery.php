@@ -11,6 +11,10 @@ class EditHistoryGallery extends EditRecord
 {
     protected static string $resource = HistoryGalleryResource::class;
 
+    protected function getRedirectUrl(): string {
+        return $this->getResource()::getUrl('index');
+    }
+    
     protected function getHeaderActions(): array
     {
         return [

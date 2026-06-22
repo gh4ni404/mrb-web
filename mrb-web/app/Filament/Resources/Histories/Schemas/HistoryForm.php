@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Histories\Schemas;
 
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class HistoryForm
@@ -30,6 +31,9 @@ class HistoryForm
                 Textarea::make('tsunami_stat_description')
                     ->required()
                     ->columnSpanFull(),
+                Toggle::make('is_active')
+                    ->label('Aktif')
+                    ->default(true),
             ]);
     }
 }

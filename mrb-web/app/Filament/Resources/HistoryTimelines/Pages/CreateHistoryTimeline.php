@@ -8,4 +8,10 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateHistoryTimeline extends CreateRecord
 {
     protected static string $resource = HistoryTimelineResource::class;
+
+    protected static bool $canCreateAnother = false;
+
+    protected function getRedirectUrl(): string {
+        return $this->getResource()::getUrl('index');
+    }
 }

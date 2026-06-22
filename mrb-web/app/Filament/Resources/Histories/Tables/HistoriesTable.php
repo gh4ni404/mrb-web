@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\Histories\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -16,11 +18,17 @@ class HistoriesTable
         return $table
             ->columns([
                 TextColumn::make('hero_title')
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(25),
                 TextColumn::make('intro_title')
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(25),
                 TextColumn::make('tsunami_stat_title')
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(25),
+                IconColumn::make('is_active')
+                    ->boolean()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -36,6 +44,7 @@ class HistoriesTable
             ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

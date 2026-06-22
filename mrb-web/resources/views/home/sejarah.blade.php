@@ -23,10 +23,10 @@
             Warisan Islam Aceh
         </span>
         <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight tracking-tight mb-6 max-w-3xl">
-            {{ $history->hero_title}}
+            {{ $history?->hero_title }}
         </h1>
         <p class="font-sans text-sm sm:text-base md:text-lg text-white/80 max-w-2xl leading-relaxed mb-10">
-            {{ $history->hero_subtitle }}
+            {{ $history?->hero_subtitle }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
             <a href="#pengantar" class="w-full sm:w-auto bg-gold hover:bg-gold-light text-emerald-dark font-sans font-bold text-xs px-8 py-4 rounded-md shadow-lg shadow-gold/15 transition-all duration-300 uppercase tracking-wider flex items-center justify-center gap-2">
@@ -55,7 +55,7 @@
                 <div class="relative">
                     <span class="text-gold/25 font-serif text-[180px] leading-none absolute -left-6 -top-20 select-none">&ldquo;</span>
                     <blockquote class="font-serif italic text-2xl md:text-3xl text-emerald-dark leading-relaxed relative z-10 pt-4">
-                        {{ $history->quote_text }}
+                        {{ $history?->quote_text }}
                     </blockquote>
                 </div>
                 <p class="font-sans font-bold text-xs uppercase tracking-widest text-gold mt-6 flex items-center gap-2">
@@ -66,10 +66,10 @@
 
             <div class="lg:col-span-5 flex flex-col reveal-on-scroll delay-200">
                 <h3 class="font-serif text-3xl font-bold text-charcoal mb-6 leading-tight">
-                    {{ $history->intro_title }}
+                    {{ $history?->intro_title }}
                 </h3>
                 <p class="font-sans text-sm text-charcoal-light leading-relaxed mb-8">
-                    {{ $history->intro_description }}
+                    {{ $history?->intro_description }}
                 </p>
 
                 <ul class="flex flex-col gap-4 font-sans text-sm text-charcoal">
@@ -144,10 +144,10 @@
             <div class="lg:col-span-7 flex flex-col reveal-on-scroll">
                 <span class="text-gold font-sans font-bold text-xs uppercase tracking-[3px] mb-3 block">MUKJIZAT 26 DESEMBER 2004</span>
                 <h2 class="font-serif text-3xl md:text-5xl font-bold leading-tight mb-6 max-w-xl">
-                    {{ $history->tsunami_stat_title }}
+                    {{ $history?->tsunami_stat_title }}
                 </h2>
                 <p class="font-sans text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl mb-8">
-                    {{ $history->tsunami_stat_description }}
+                    {{ $history?->tsunami_stat_description }}
                 </p>
             </div>
 

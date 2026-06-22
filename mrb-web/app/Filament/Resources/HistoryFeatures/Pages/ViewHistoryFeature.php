@@ -3,8 +3,10 @@
 namespace App\Filament\Resources\HistoryFeatures\Pages;
 
 use App\Filament\Resources\HistoryFeatures\HistoryFeatureResource;
+use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
+use Filament\Support\Icons\Heroicon;
 
 class ViewHistoryFeature extends ViewRecord
 {
@@ -13,6 +15,11 @@ class ViewHistoryFeature extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
+            Action::make('back')
+            ->label('Kembali')
+            ->color('gray')
+            ->url(HistoryFeatureResource::getIndexUrl())
+            ->icon(Heroicon::ArrowLeft),
             EditAction::make(),
         ];
     }

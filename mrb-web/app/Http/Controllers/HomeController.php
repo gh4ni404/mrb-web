@@ -34,7 +34,7 @@ class HomeController extends Controller
 
     public function sejarah()
     {
-        $history = History::getInstance();
+        $history = History::active()->first();
         $timelines = HistoryTimeline::active()->get();
         $featuresEstetika = HistoryFeature::active()->byCategory('estetika')->get();
         $featuresModern = HistoryFeature::active()->byCategory('modern')->get();
