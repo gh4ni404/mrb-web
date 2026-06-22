@@ -25,7 +25,7 @@
                 </button>
                 <div
                     class="absolute top-full left-0 w-56 bg-emerald-dark/95 backdrop-blur-xl border border-gold/20 rounded-b-lg py-3 hidden group-hover:block shadow-xl">
-                    <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Sejarah Masjid</a>
+                    <a href="{{ route('sejarah') }}" class="block px-5 py-2 text-gold font-bold bg-gold/10 hover:bg-gold/20 transition-all">Sejarah Masjid</a>
                     <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Visi & Misi</a>
                     <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Struktur Kepengurusan</a>
                     <a href="#" class="block px-5 py-2 hover:bg-gold/10 hover:text-gold transition-all">Imam & Muadzin</a>
@@ -102,7 +102,7 @@
     <div id="mobile-menu"
         class="hidden fixed top-24 left-4 right-4 bg-emerald-dark/98 backdrop-blur-xl border border-gold/30 rounded-2xl p-6 z-40 shadow-2xl flex flex-col gap-2 max-h-[80vh] overflow-y-auto lg:hidden text-left">
         <a href="{{ route('home') }}" class="text-gold font-bold text-base py-3 border-b border-white/5">Beranda</a>
-        <a href="#" class="text-white/80 font-medium text-base py-3 border-b border-white/5">Profil Masjid</a>
+        <a href="{{ route('sejarah') }}" class="text-gold font-bold text-base py-3 border-b border-white/5">Profil Masjid (Sejarah)</a>
         <a href="#" class="text-white/80 font-medium text-base py-3 border-b border-white/5">Layanan & Wisata</a>
         <a href="#" class="text-white/80 font-medium text-base py-3 border-b border-white/5">Kegiatan & Syiar</a>
         <a href="#" class="text-white/80 font-medium text-base py-3 border-b border-white/5">Media & Publikasi</a>

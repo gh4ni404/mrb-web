@@ -17,7 +17,6 @@ class Post extends Model implements HasMedia
         'content',
         'excerpt',
         'type',
-        'category_id',
         'users_id',
         'is_published',
         'published_at',
@@ -56,9 +55,9 @@ class Post extends Model implements HasMedia
 
     // ── Relasi ──────────────────────────────────────────────
 
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class);
     }
 
     public function author()

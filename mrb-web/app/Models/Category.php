@@ -21,7 +21,7 @@ class Category extends Model
     /** Semua post yang menggunakan kategori ini */
     public function posts()
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsToMany(Post::class);
     }
 
     /** Semua galeri yang menggunakan kategori ini */

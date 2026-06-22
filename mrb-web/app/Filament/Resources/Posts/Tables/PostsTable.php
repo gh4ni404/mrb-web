@@ -59,10 +59,9 @@ class PostsTable
                     })
                     ->badge(),
 
-                TextColumn::make('category.name')
+                TextColumn::make('categories.name')
                     ->label('Kategori')
-                    ->numeric()
-                    ->sortable(),
+                    ->badge(),
 
                 IconColumn::make('is_published')
                     ->label('Publik')
@@ -84,11 +83,12 @@ class PostsTable
                         'khutbah' => 'Khutbah',
                     ]),
 
-                SelectFilter::make('category_id')
+                SelectFilter::make('categories')
                     ->label('Kategori')
-                    ->relationship('category', 'name')
+                    ->relationship('categories', 'name')
                     ->searchable()
-                    ->preload(),
+                    ->preload()
+                    ->multiple(),
 
                 TernaryFilter::make('is_published')
                     ->label('Status')

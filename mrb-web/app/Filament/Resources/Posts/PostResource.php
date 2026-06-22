@@ -42,7 +42,7 @@ class PostResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->with(['author', 'author.roles', 'category']);
+        return parent::getEloquentQuery()->with(['author', 'author.roles', 'categories']);
     }
 
     public static function getRelations(): array

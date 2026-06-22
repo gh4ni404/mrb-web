@@ -1,37 +1,33 @@
 <?php
 
-namespace App\Filament\Resources\Posts\Schemas;
+namespace App\Filament\Resources\HistoryGalleries\Schemas;
 
 use Filament\Infolists\Components\IconEntry;
+use Filament\Infolists\Components\SpatieMediaLibraryImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Schema;
 
-class PostInfolist
+class HistoryGalleryInfolist
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
+                TextEntry::make('category.name')
+                    ->label('Category'),
                 TextEntry::make('title'),
-                TextEntry::make('slug'),
-                TextEntry::make('content')
-                    ->columnSpanFull(),
-                TextEntry::make('excerpt')
+                TextEntry::make('description')
                     ->placeholder('-')
                     ->columnSpanFull(),
-                TextEntry::make('type')
-                    ->badge(),
-                TextEntry::make('categories.name')
-                    ->label('Category')
-                    ->badge()
-                    ->placeholder('-'),
-                TextEntry::make('author.name')
-                    ->label('Author'),
-                IconEntry::make('is_published')
+                SpatieMediaLibraryImageEntry::make('images')
+                    ->collection('images')
+                    ->columnSpanFull(),
+                SpatieMediaLibraryImageEntry::make('thumbnail')
+                    ->collection('thumbnail')
+                    ->placeholder('-')
+                    ->columnSpanFull(),
+                IconEntry::make('is_active')
                     ->boolean(),
-                TextEntry::make('published_at')
-                    ->dateTime()
-                    ->placeholder('-'),
                 TextEntry::make('created_at')
                     ->dateTime()
                     ->placeholder('-'),

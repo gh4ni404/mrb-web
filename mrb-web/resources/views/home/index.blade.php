@@ -160,7 +160,7 @@
                             @endforeach
                         </div>
 
-                        <a href="#"
+                        <a href="{{ route('sejarah') }}"
                             class="btn-emerald inline-flex items-center gap-3 bg-emerald hover:bg-emerald-light font-sans font-bold text-sm text-white px-8 py-3.5 rounded-md mt-10 shadow-lg shadow-emerald/15 hover:scale-105 transition-all duration-300 self-start">
                             Baca Sejarah Lengkap
                             <iconify-icon icon="ph:book" width="16"></iconify-icon>
@@ -375,7 +375,7 @@
                         Publikasi MRB
                     </span>
                     <h2 class="section-heading font-display font-black text-3xl md:text-4xl text-charcoal leading-tight mb-4">
-                        Kabar Utama & Khutbah Jumat
+                        Kabar Utama, Artikel & Khutbah Jumat
                     </h2>
                     <p class="font-sans text-sm md:text-base text-charcoal-light/80 max-w-xl mx-auto leading-relaxed">
                         Ikuti pemberitaan seputar renovasi, kunjungan kehormatan, artikel dakwah resmi, dan arsip naskah khutbah
@@ -385,143 +385,106 @@
 
                 <div id="news-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
 
+                    @if($latestNews->count())
                     {{-- Featured News --}}
                     <div
                         class="reveal-on-scroll lg:col-span-6 news-card bg-white rounded-xl overflow-hidden border border-soft-gray-2 flex flex-col shadow-md card-hover-lift group">
                         @php
-    $featured = $latestNews->first();
+                            $featured = $latestNews->first();
                         @endphp
                         <div class="news-card-featured h-64 md:h-80 overflow-hidden relative img-zoom-hover">
-                            @if($featured && $featured->getFirstMediaUrl('thumbnail'))
+                            @if($featured?->getFirstMediaUrl('thumbnail'))
                                 <img src="{{ $featured->getFirstMediaUrl('thumbnail') }}" alt="{{ $featured->title }}" class="w-full h-full object-cover" />
-                            @else
-                                <img src="{{ asset('assets/img/suasana-ibadah-bg.jpg') }}" alt="Suasana Ibadah di Baiturrahman" class="w-full h-full object-cover" />
                             @endif
                             <span class="absolute top-4 left-4 bg-emerald text-white text-[10px] tracking-wider uppercase font-bold px-3.5 py-1 rounded-full">UTAMA</span>
                         </div>
                         <div class="news-body p-8 flex-1 flex flex-col">
-                            <span
-                                class="news-cat font-sans font-extrabold text-[10px] text-gold uppercase tracking-wider">{{ $featured?->category?->name ?? 'Kegiatan Masjid' }}</span>
+                            <span class="news-cat font-sans font-extrabold text-[10px] text-gold uppercase tracking-wider">{{ $featured?->categories?->pluck('name')->join(', ') }}</span>
                             <h3
                                 class="news-title font-sans font-bold text-xl md:text-2xl text-charcoal mt-2 mb-3 leading-tight group-hover:text-emerald transition-colors">
-                                {{ $featured?->title ?? 'Puncak Peringatan Nuzulul Qur\'an 1447 H di Masjid Raya Baiturrahman Banda Aceh Berlangsung Khidmat' }}
+                                {{ $featured?->title }}
                             </h3>
                             <p
                                 class="news-excerpt font-sans text-xs md:text-sm text-charcoal-light/75 leading-relaxed mb-6 flex-1">
-                                {{ $featured?->excerpt ?? 'Ribuan jamaah memadat ruang utama Masjid Raya Baiturrahman hingga pelataran luar untuk mendengarkan tausiyah bertema "Tuntunan Al-Qur\'an Menghadapi Era Disrupsi Digital" yang disampaikan langsung oleh jajaran Majelis Ulama.' }}
+                                {{ str($featured?->excerpt)->limit(110) }}
                             </p>
                             <div
                                 class="news-date font-sans text-[11px] text-charcoal-light/50 flex items-center gap-1.5 mt-auto">
                                 <iconify-icon icon="ph:calendar-blank"></iconify-icon>
-                                <span>{{ $featured?->published_at?->format('j F Y') ?? '5 Juni 2026' }}</span>
+                                <span>{{ $featured?->published_at?->format('d M Y H:m') }}</span>
                             </div>
                         </div>
                     </div>
 
                     {{-- Supporting News Cards --}}
                     <div class="lg:col-span-6 flex flex-col gap-6 reveal-on-scroll delay-200">
-                        @forelse($latestNews->skip(1) as $news)
+                        @foreach($latestNews->skip(1) as $news)
                             <div
                                 class="bg-white rounded-xl overflow-hidden border border-soft-gray-2 p-6 flex gap-4 md:gap-6 shadow-sm card-hover-lift group cursor-pointer">
                                 <div class="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden flex-shrink-0 img-zoom-hover">
                                     @if($news->getFirstMediaUrl('thumbnail'))
                                         <img src="{{ $news->getFirstMediaUrl('thumbnail', 'thumb') }}" alt="{{ $news->title }}"
                                             class="w-full h-full object-cover" />
-                                    @else
-                                        <img src="https://images.unsplash.com/photo-1590076214537-1e377d979e99?q=80&w=800" alt="Berita"
-                                            class="w-full h-full object-cover" />
                                     @endif
                                 </div>
                                 <div class="flex flex-col justify-between flex-1">
                                     <div>
                                         <span
-                                            class="news-cat font-sans font-extrabold text-[9px] text-gold uppercase tracking-wider">{{ $news->category?->name ?? 'Berita' }}</span>
+                                            class="news-cat font-sans font-extrabold text-[9px] text-gold uppercase tracking-wider">{{ $news?->categories?->first()?->name ?? 'Berita' }}</span>
                                         <h4
                                             class="news-title font-sans font-bold text-sm md:text-base text-charcoal mt-1 line-clamp-2 leading-snug group-hover:text-emerald transition-colors">
                                             {{ $news->title }}
                                         </h4>
-                                        <p class="news-excerpt font-sans text-xs md:text-sm text-charcoal-light/75 leading-relaxed mb-6 flex-1">
-                                            {{ $news?->excerpt ?? 'Ribuan jamaah memadat ruang utama Masjid Raya Baiturrahman hingga pelataran luar untuk mendengarkan tausiyah bertema "Tuntunan Al-Qur\'an Menghadapi Era Disrupsi Digital" yang disampaikan langsung oleh jajaran Majelis Ulama.' }}
-                                        </p>
                                     </div>
                                     <p
                                         class="news-date font-sans text-[11px] text-charcoal-light/50 flex items-center gap-1.5 mt-2">
                                         <iconify-icon icon="ph:calendar-blank"></iconify-icon>
-                                        <span>{{ $news->published_at?->format('j F Y') ?? '' }}</span>
+                                        <span>{{ $news->published_at?->format('d M Y H:m') ?? '' }}</span>
                                     </p>
                                 </div>
                             </div>
-                        @empty
-                            <div
-                                class="bg-white rounded-xl overflow-hidden border border-soft-gray-2 p-6 flex gap-4 md:gap-6 shadow-sm card-hover-lift group cursor-pointer">
-                                <div class="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden flex-shrink-0 img-zoom-hover">
-                                    <img src="https://images.unsplash.com/photo-1590076214537-1e377d979e99?q=80&w=800" alt="Berita"
-                                        class="w-full h-full object-cover" />
-                                </div>
-                                <div class="flex flex-col justify-between flex-1">
-                                    <div>
-                                        <span
-                                            class="news-cat font-sans font-extrabold text-[9px] text-gold uppercase tracking-wider">Pembangunan</span>
-                                        <h4
-                                            class="news-title font-sans font-bold text-sm md:text-base text-charcoal mt-1 line-clamp-2 leading-snug group-hover:text-emerald transition-colors">
-                                            Pemeliharaan Berkala 12 Payung Elektrik Masjid Raya Baiturrahman Memasuki Tahap Akhir
-                                        </h4>
-                                    </div>
-                                    <p
-                                        class="news-date font-sans text-[11px] text-charcoal-light/50 flex items-center gap-1.5 mt-2">
-                                        <iconify-icon icon="ph:calendar-blank"></iconify-icon>
-                                        <span>4 Juni 2026</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="bg-white rounded-xl overflow-hidden border border-soft-gray-2 p-6 flex gap-4 md:gap-6 shadow-sm card-hover-lift group cursor-pointer">
-                                <div class="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden flex-shrink-0 img-zoom-hover">
-                                    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=800" alt="Berita"
-                                        class="w-full h-full object-cover" />
-                                </div>
-                                <div class="flex flex-col justify-between flex-1">
-                                    <div>
-                                        <span
-                                            class="news-cat font-sans font-extrabold text-[9px] text-gold uppercase tracking-wider">Pendidikan</span>
-                                        <h4
-                                            class="news-title font-sans font-bold text-sm md:text-base text-charcoal mt-1 line-clamp-2 leading-snug group-hover:text-emerald transition-colors">
-                                            Perpustakaan Masjid Raya Baiturrahman Terima Hibah Ribuan Manuskrip Digital Sejarah
-                                            Islam Nusantara
-                                        </h4>
-                                    </div>
-                                    <p
-                                        class="news-date font-sans text-[11px] text-charcoal-light/50 flex items-center gap-1.5 mt-2">
-                                        <iconify-icon icon="ph:calendar-blank"></iconify-icon>
-                                        <span>2 Juni 2026</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="bg-white rounded-xl overflow-hidden border border-soft-gray-2 p-6 flex gap-4 md:gap-6 shadow-sm card-hover-lift group cursor-pointer">
-                                <div class="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden flex-shrink-0 img-zoom-hover">
-                                    <img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=800" alt="Berita"
-                                        class="w-full h-full object-cover" />
-                                </div>
-                                <div class="flex flex-col justify-between flex-1">
-                                    <div>
-                                        <span
-                                            class="news-cat font-sans font-extrabold text-[9px] text-gold uppercase tracking-wider">Sosial</span>
-                                        <h4
-                                            class="news-title font-sans font-bold text-sm md:text-base text-charcoal mt-1 line-clamp-2 leading-snug group-hover:text-emerald transition-colors">
-                                            Lembaga ZISWAF Baiturrahman Sukses Salurkan Beasiswa Pendidikan untuk 500 Yatim & Dhuafa
-                                        </h4>
-                                    </div>
-                                    <p
-                                        class="news-date font-sans text-[11px] text-charcoal-light/50 flex items-center gap-1.5 mt-2">
-                                        <iconify-icon icon="ph:calendar-blank"></iconify-icon>
-                                        <span>31 Mei 2026</span>
-                                    </p>
-                                </div>
-                            </div>
-                        @endforelse
+                        @endforeach
                     </div>
+                @else
+                    <div class="lg:col-span-12 flex flex-col items-center justify-center py-16 text-charcoal-light/60">
+                        <iconify-icon icon="ph:newspaper-duotone" class="text-5xl mb-4"></iconify-icon>
+                        <p class="font-sans text-lg">Belum ada berita.</p>
+                    </div>
+                @endif
                 </div>
+
+                {{-- Article Grid --}}
+                @if($latestArticle->count())
+                <div id="article-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 reveal-on-scroll">
+                    @foreach($latestArticle as $article)
+                    <div
+                        class="article-card bg-white rounded-xl overflow-hidden border border-soft-gray-2 shadow-sm card-hover-lift group cursor-pointer">
+                        <div class="overflow-hidden img-zoom-hover">
+                            @if($article->getFirstMediaUrl('thumbnail'))
+                            <img src="{{ $article->getFirstMediaUrl('thumbnail', 'thumb') }}" alt="{{ $article->title }}"
+                                class="w-full h-48 object-cover" />
+                            @endif
+                        </div>
+                        <div class="p-5">
+                            <span
+                                class="article-cat font-sans font-extrabold text-[9px] text-gold uppercase tracking-wider">{{ $article->categories?->pluck('name')->join(', ') }}</span>
+                            <h4
+                                class="article-title font-sans font-bold text-sm md:text-base text-charcoal mt-1.5 line-clamp-2 leading-snug group-hover:text-emerald transition-colors">
+                                {{ $article->title }}
+                            </h4>
+                            <p class="article-excerpt font-sans text-xs text-charcoal-light/75 mt-2 line-clamp-2">
+                                {{ str($article->excerpt)->limit(80) }}
+                            </p>
+                            <p
+                                class="article-date font-sans text-[11px] text-charcoal-light/50 flex items-center gap-1.5 mt-3">
+                                <iconify-icon icon="ph:calendar-blank"></iconify-icon>
+                                <span>{{ $article->published_at?->format('d M Y H:m') ?? '' }}</span>
+                            </p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                @endif
 
                 <div id="khutbah-archive-anchor"></div>
 
@@ -722,19 +685,19 @@
                 <div id="gallery-masonry"
                     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 reveal-on-scroll delay-200">
                     @php
-    $galleryItems = [
-        ['img' => asset('assets/img/koridor-bg.jpg'), 'caption' => 'Pemandangan Udara Masjid Raya Baiturrahman', 'cols' => 'col-span-1 sm:col-span-2 row-span-1 sm:row-span-2', 'h' => 'min-h-[350px]', 'cat' => 'arsitektur'],
-        ['img' => asset('assets/img/ornamen-kubah-bg.jpg'), 'caption' => 'Halaqah Tilawatil Quran Jamaah', 'cols' => '', 'h' => 'min-h-[350px] md:h-56', 'cat' => 'jamaah'],
-        ['img' => 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?q=80&w=800&auto=format&fit=crop', 'caption' => 'Wisatawan Berpose di Bawah Payung Elektrik', 'cols' => '', 'h' => 'min-h-[350px] md:h-56', 'cat' => 'wisata'],
-        ['img' => asset('assets/img/shalat-idul-adha-bg.jpg'), 'caption' => 'Kemegahan Fasad Masjid Terpapar Sinar Senja', 'cols' => 'col-span-1 sm:col-span-2', 'h' => 'md:h-56', 'cat' => 'arsitektur'],
-    ];
+                    $galleryItems = [
+                        ['img' => asset('assets/img/koridor-bg.jpg'), 'caption' => 'Pemandangan Udara Masjid Raya Baiturrahman', 'cols' => 'col-span-1 sm:col-span-2 row-span-1 sm:row-span-2', 'h' => 'h-full min-h-[350px]', 'cat' => 'arsitektur'],
+                        ['img' => asset('assets/img/ornamen-kubah-bg.jpg'), 'caption' => 'Halaqah Tilawatil Quran Jamaah', 'cols' => '', 'h' => 'h-48 min-h-[350px] md:h-56', 'cat' => 'jamaah'],
+                        ['img' => 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?q=80&w=800&auto=format&fit=crop', 'caption' => 'Wisatawan Berpose di Bawah Payung Elektrik', 'cols' => '', 'h' => 'h-48 min-h-[350px] md:h-56', 'cat' => 'wisata'],
+                        ['img' => asset('assets/img/shalat-idul-adha-bg.jpg'), 'caption' => 'Kemegahan Fasad Masjid Terpapar Sinar Senja', 'cols' => 'col-span-1 sm:col-span-2', 'h' => 'h-48 md:h-56', 'cat' => 'arsitektur'],
+                    ];
                     @endphp
 
                     @foreach($galleryItems as $item)
                         <div class="g-item {{ $item['cols'] }} relative rounded-xl overflow-hidden group shadow-lg cursor-pointer img-zoom-hover"
                             data-category="{{ $item['cat'] }}">
                             <img src="{{ $item['img'] }}" alt="{{ $item['caption'] }}"
-                                class="w-full h-48 {{ $item['h'] }} object-cover" />
+                                class="w-full {{ $item['h'] }} object-cover" />
                             <div
                                 class="g-caption absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-emerald-dark/90 to-transparent text-white font-sans font-semibold text-xs">
                                 {{ $item['caption'] }}

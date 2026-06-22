@@ -1,4 +1,4 @@
-<footer id="footer" class="bg-[#0b1016] text-white/55 pt-20 border-t border-white/5">
+<footer id="footer" class="bg-[#0b1016] relative z-10 -mt-30 pt-20 text-white rounded-t-[120px]">
     <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-12 border-b border-white/5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
 
         <div id="footer-brand" class="lg:col-span-4 flex flex-col gap-6">
@@ -27,7 +27,7 @@
             <h5 class="footer-col-hd font-sans font-bold text-xs text-white tracking-widest uppercase">Menu Cepat</h5>
             <ul class="footer-links flex flex-col gap-3 font-sans text-xs md:text-sm">
                 <li><a href="{{ route('home') }}" class="hover:text-gold transition-colors">Beranda Utama</a></li>
-                <li><a href="#history" class="hover:text-gold transition-colors">Profil Masjid</a></li>
+                <li><a href="{{ route('sejarah') }}" class="hover:text-gold transition-colors">Profil Masjid</a></li>
                 <li><a href="#services" class="hover:text-gold transition-colors">Layanan Publik</a></li>
                 <li><a href="#events" class="hover:text-gold transition-colors">Agenda Kajian</a></li>
                 <li><a href="#khutbah-archive-anchor" class="hover:text-gold transition-colors">Arsip Khutbah</a></li>

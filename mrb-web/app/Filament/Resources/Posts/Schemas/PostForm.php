@@ -73,9 +73,10 @@ class PostForm
                     ->required()
                     ->native(false),
 
-                Select::make('category_id')
+                Select::make('categories')
                     ->label('Kategori')
-                    ->relationship('category', 'name', fn ($query) => $query->where('type', 'post'))
+                    ->multiple()
+                    ->relationship('categories', 'name', fn ($query) => $query->where('type', 'post'))
                     ->searchable()
                     ->nullable()
                     ->preload()
